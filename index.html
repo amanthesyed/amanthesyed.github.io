@@ -191,6 +191,16 @@ select{border-radius:0}.section{border-color:var(--line)}
 /* Cashback Streak case study: remove the decorative left column and use the space for the story */
 #deep-streak .deep-layout{grid-template-columns:1fr;max-width:920px}
 #deep-streak .deep-layout>div{max-width:920px}
+
+/* Selected work: make every card contain its full content */
+.work .case{height:310px;min-height:310px;padding:22px;overflow:hidden}
+.work .case h3{font-size:28px;line-height:1.04;margin:16px 0 9px}
+.work .case p{font-size:12px;line-height:1.42;margin:0}
+.work .metric{font-size:32px;line-height:1.05}
+.work .case>div:last-child{margin-top:16px}
+.work .case>div:last-child small{font-size:11px;line-height:1.25}
+@media(max-width:900px){.work .case{height:300px;min-height:300px}}
+@media(max-width:800px){.work .case{height:auto;min-height:250px}}
 </style>
 </head>
 <body>
