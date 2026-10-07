@@ -151,24 +151,23 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="hero-side"><b>Product signal</b><span>Growth, automation and customer-facing product systems.</span><div class="hero-dashboard"><div class="dash-top"><span>MONTHLY OPPORTUNITY</span><span>LIVE PROTOTYPE</span></div><div class="dash-value">₹6.03 Cr <span>modelled</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
 </header>
 
-<section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">A few problems I've worked on across healthcare commerce, B2B products and engineering-led product delivery.</p></div>
+<section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">The product work I want a hiring manager to understand first: onboarding, growth and technical product delivery.</p></div>
 <div class="work">
-<article class="case"><div><div class="tag">Truemeds · Commerce + Growth</div><h3>Turning healthcare traffic into repeat behaviour.</h3><p>Worked across availability, pricing, chronic-care discovery, SEO, loyalty and engagement loops for a ₹120Cr+ annual GMV healthcare commerce business.</p></div><div><span class="metric">₹30L<span style="font-size:20px">+</span></span><div><small>additional monthly revenue opportunity from Chronic FOD</small></div></div></article>
-<article class="case dark"><div><div class="tag">Experiment · Engagement</div><h3>Cashback Streak</h3><p>A behavioural loop designed to move customers from engagement to order — with conversion, AOV and revenue as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></div></article>
+<article class="case"><div><div class="tag">Truemeds · Onboarding · 0→1</div><h3>Turning a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that let chronic-care customers identify their condition, reach a disease-specific proposition and enter the right product journey.</p></div><div><span class="metric">20%</span><div><small>persistent A/B rollout vs 80% control</small></div></div></article>
+<article class="case dark"><div><div class="tag">Truemeds · Commerce + Growth</div><h3>Turning healthcare traffic into repeat behaviour.</h3><p>Worked across availability, pricing, chronic-care discovery, SEO, loyalty and engagement loops for a ₹120Cr+ annual GMV healthcare commerce business.</p></div><div><span class="metric">₹30L<span style="font-size:20px">+</span></span><div><small>additional monthly revenue opportunity from Chronic FOD</small></div></div></article>
 <article class="case"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div></div></article>
-
 </div></div></section>
 
 <section class="section deep-work" id="deep-work">
 <div class="wrap">
 <div class="section-head">
 <h2>Deep product work</h2>
-<p class="section-intro">Instead of adding more portfolio cards, I built deeper ways to inspect four projects: assumptions, trade-offs, behaviour and decision logic.</p>
+<p class="section-intro">Instead of adding more portfolio cards, I built deeper ways to inspect the product decisions: assumptions, trade-offs, behaviour and decision logic.</p>
 </div>
 
 <div class="deep-tabs">
 <button class="deep-tab active" onclick="showDeep('chronic',this)">Chronic FOD</button>
-<button class="deep-tab" onclick="showDeep('streak',this)">Cashback Streak</button>
+<button class="deep-tab" onclick="showDeep('onboarding',this)">Chronic Onboarding</button>
 <button class="deep-tab" onclick="showDeep('copilot',this)">Revenue Copilot</button>
 <button class="deep-tab" onclick="showDeep('support',this)">Support Agent</button>
 </div>
@@ -192,20 +191,30 @@ select{border-radius:0}.section{border-color:var(--line)}
 </div>
 </div>
 
-<div class="deep-panel" id="deep-streak">
+<div class="deep-panel" id="deep-onboarding">
 <div class="deep-layout">
 <div>
-<div class="deep-kicker">Behavioural product · Experiment</div>
-<h3>Design the loop, then pressure-test the business case.</h3>
-<p>Cashback Streak was framed as a behavioural loop rather than a decorative gamification feature: give customers a reason to return, connect repeated engagement to ordering, then measure whether the loop improves commercial outcomes.</p>
-<div class="deep-facts"><div class="deep-fact"><small>Current conversion</small><strong>0.88%</strong></div><div class="deep-fact"><small>Modelled target</small><strong>1.05%</strong></div><div class="deep-fact"><small>Modelled AOV</small><strong>₹2,270 → ₹2,380</strong></div><div class="deep-fact"><small>Modelled revenue</small><strong>₹4.8Cr → ₹6.03Cr</strong></div></div>
+<div class="deep-kicker">Truemeds · Onboarding · Android</div>
+<h3>What if the first login understood why the customer came?</h3>
+<p>The generic homepage made a chronic-care customer navigate the same experience as everyone else. The product opportunity was to identify the customer's condition early, then make the next useful action obvious.</p>
+<p>The flow was intentionally narrow: <strong>identify → select → personalise → act</strong>. It was not a disease-management product; it was an onboarding layer that connected the customer's intent to the existing commerce journey.</p>
+<div class="deep-facts"><div class="deep-fact"><small>Platform</small><strong>Android</strong></div><div class="deep-fact"><small>Experiment</small><strong>20% vs 80%</strong></div><div class="deep-fact"><small>Selection</small><strong>Top 8 + A–Z + search</strong></div><div class="deep-fact"><small>Core behaviour</small><strong>Condition → CTA</strong></div></div>
+<div class="trace">
+<div class="trace-item"><b>01 · Identify</b> — first-time customer enters the chronic onboarding experience.</div>
+<div class="trace-item"><b>02 · Select</b> — choose a condition using popular diseases, A–Z browsing, search and multi-select chips.</div>
+<div class="trace-item"><b>03 · Personalise</b> — show disease-specific savings, categories, benefits and relevant content.</div>
+<div class="trace-item"><b>04 · Act</b> — guide the customer through the appropriate CTA/deep link into the existing journey.</div>
+</div>
 </div>
 <div class="deep-control">
-<h4>Change the product assumptions</h4>
-<div class="deep-row"><label>Conversion target</label><input id="streakConv" type="range" min=".88" max="1.25" step=".01" value="1.05" oninput="updateStreak()"><div class="deep-val" id="streakConvVal">1.05%</div></div>
-<div class="deep-row"><label>AOV</label><input id="streakAov" type="range" min="2000" max="2600" step="10" value="2380" oninput="updateStreak()"><div class="deep-val" id="streakAovVal">₹2,380</div></div>
-<div class="deep-row"><label>Traffic</label><input id="streakTraffic" type="range" min="200000" max="800000" step="10000" value="480000" oninput="updateStreak()"><div class="deep-val" id="streakTrafficVal">480k</div></div>
-<div class="deep-result"><small>Illustrative monthly revenue</small><br><strong id="streakRevenue">₹11.99Cr</strong><p id="streakNarrative">At these assumptions, conversion is doing most of the commercial work.</p></div>
+<h4>Product decision map</h4>
+<div class="deep-result" style="margin-top:0"><small>Experience</small><br><strong>Generic homepage → condition-led journey</strong><p>The product earns the right to personalise by asking one useful question early.</p></div>
+<div class="trace">
+<div class="trace-item"><b>Scope</b> — Android first-login only; returning users, iOS/web and disease-management functionality stayed out.</div>
+<div class="trace-item"><b>Content</b> — backend-configured disease content with fallback assets so the experience could evolve without an app release for every content change.</div>
+<div class="trace-item"><b>Measurement</b> — selection, search/A–Z interaction, CTA clicks, drop-offs and downstream conversion.</div>
+<div class="trace-item"><b>Experiment</b> — persistent 20% onboarding cohort vs 80% control, allowing the team to compare the journey against the unchanged homepage.</div>
+</div>
 </div>
 </div>
 </div>
@@ -255,24 +264,14 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="projectgrid">
 <article class="project ai"><div><div class="tag">AI product prototype · Revenue</div><h3>Revenue Opportunity Copilot</h3><p>A product workflow that takes funnel and customer metrics, spots leaks, ranks opportunities and turns them into testable product hypotheses.</p></div><div class="stack">Analytics · LLM workflow · structured outputs</div></article>
 <article class="project"><div><div class="tag">AI agent · Operations</div><h3>Support Triage Copilot</h3><p>Classifies incoming issues, retrieves context, identifies likely root causes and recommends the next action before a case becomes another ticket loop.</p></div><div class="stack">Classification · retrieval · tools · human-in-the-loop</div></article>
-<article class="project"><div><div class="tag">AI chatbot · Discovery</div><h3>Product Advisor Chatbot</h3><p>A conversational assistant designed around intent: understand the user's goal, ask the minimum useful questions and guide them to the right product or action.</p></div><div class="stack">Conversation UX · intent · retrieval · guardrails</div></article>
+
 <article class="project"><div><div class="tag">AI agent · Growth</div><h3>Experiment Copilot</h3><p>Turns a metric, segment and business goal into an experiment brief and can later evaluate results against the original decision rule.</p></div><div class="stack">Experimentation · agents · analytics · prompts</div></article>
 </div>
 <p style="color:var(--muted);font-size:12px;margin-top:20px">These are portfolio builds/prototypes, not production systems or claims of commercial deployment.</p>
 </div>
 </section>
 
-<section class="section" id="lumen">
-<div class="wrap">
-<div class="section-head"><h2>Lumen projects</h2><p class="section-intro">The part of my product story that doesn't fit neatly into a “PM” title: integrations, workflows, data and shipping customer-facing features.</p></div>
-<div class="lumen-grid">
-<div class="lumen-card"><div class="tag">Integration product</div><h3>REST integrations at scale</h3><p>Worked on customer-facing integrations and data flows processing 100k+ daily records — translating technical constraints into product requirements and usable workflows.</p></div>
-<div class="lumen-card"><div class="tag">Feature delivery</div><h3>50+ production features</h3><p>Worked across requirements, delivery and release coordination for 50+ production features, with the focus on turning ambiguous requests into shippable product increments.</p></div>
-<div class="lumen-card"><div class="tag">Operational product</div><h3>Reducing the ticket loop</h3><p>Improved workflows around issue resolution and product operations, contributing to a 40% reduction in ticket resolution time.</p></div>
-<div class="lumen-card"><div class="tag">Product + engineering</div><h3>Where the two disciplines meet</h3><p>Lumen is where I became comfortable being the person who could talk to customers, analysts and engineers without translating every sentence through someone else.</p></div>
-</div>
-</div>
-</section>
+
 
 <section class="section" id="growth">
 <div class="wrap">
@@ -285,27 +284,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 </div>
 </section>
 
-<section class="section" id="spotify">
-<div class="wrap">
-<div class="story">
-<div><div class="story-label">Reconstructed product case study · 2026</div></div>
-<div class="story-copy">
-<h3>How might an independent artist grow monthly listeners without simply buying more reach?</h3>
-<p>This product case study explores a simple growth problem for Spotify artists: getting discovered is only useful if discovery turns into actual listening, and listening turns into repeat behaviour.</p>
-<p>The case is reconstructed from the product problem and approach. I have not invented historical screenshots, research quotes or results.</p>
-<div class="funnel">
-<div class="tag">Growth loop</div>
-<div class="funnel-row"><b>01</b><div class="bar" style="width:72%">Discovery — get the right listener to the artist</div></div>
-<div class="funnel-row"><b>02</b><div class="bar" style="width:58%">First listen — reduce the friction to try a track</div></div>
-<div class="funnel-row"><b>03</b><div class="bar" style="width:82%">Repeat — create reasons to return</div></div>
-<div class="funnel-note">The north-star question: does the product create more monthly listeners, not merely more impressions?</div>
-</div>
-<p><strong>What I'd measure today:</strong> artist discovery → first play conversion, repeat-listen rate, listeners retained over 28 days, playlist/source contribution and incremental monthly listeners.</p>
-<p style="margin-bottom:0"><strong>Why this belongs here:</strong> it shows the origin of my interest in growth product — taking an audience problem and turning it into a measurable product loop.</p>
-</div>
-</div>
-</div>
-</section>
+
 
 <section class="section" id="copilot">
 <div class="wrap">
@@ -335,7 +314,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 
 <section class="section" id="agent-lab"><div class="wrap"><div class="section-head"><h2>Agent decision lab</h2><p class="section-intro">A tiny prototype of an agentic workflow: classify the request, decide whether a tool is safe to use, and choose between automation and human review.</p></div><div class="widget"><div class="widget-head"><div><div class="tag">Interactive · Agent orchestration</div><h3>What should the agent do next?</h3></div><div class="pill">Browser prototype</div></div><div class="inputs" style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="input"><label>Request type</label><select id="agentType" onchange="runAgentLab()" style="width:100%;border:1px solid var(--line);background:var(--soft);padding:13px;font:inherit;color:var(--ink)"><option value="refund">Refund request</option><option value="faq">Product question</option><option value="bug">Technical issue</option><option value="highrisk">Account / security issue</option></select></div><div class="input"><label>Confidence</label><input id="agentConfidence" type="range" min="50" max="99" value="86" oninput="runAgentLab()"><div class="slider-value" id="agentConfidenceVal">86%</div></div></div><div class="widget-output" id="agentOutput"></div><div class="interactive-note">Illustrative routing logic. A real deployment would add permissions, audit logs, tool constraints and evaluation.</div></div></div></section><section class="section" id="experiment-lab"><div class="wrap"><div class="section-head"><h2>Experiment lab</h2><p class="section-intro">Change the assumptions. Watch the business case move. This is how I like to connect product decisions to outcomes.</p></div><div class="widget"><div class="widget-head"><div><div class="tag">Interactive model · Growth</div><h3>What happens if conversion moves?</h3></div><div class="pill">No backend</div></div><div class="slider-row"><label>Traffic</label><input id="expTraffic" type="range" min="50000" max="500000" step="10000" value="250000" oninput="updateExperiment()"><div class="slider-value" id="expTrafficVal">250k</div></div><div class="slider-row"><label>Conversion</label><input id="expConv" type="range" min="0.5" max="3" step="0.05" value="1.2" oninput="updateExperiment()"><div class="slider-value" id="expConvVal">1.20%</div></div><div class="slider-row"><label>AOV</label><input id="expAov" type="range" min="1000" max="3500" step="50" value="2270" oninput="updateExperiment()"><div class="slider-value" id="expAovVal">₹2,270</div></div><div class="widget-output"><div class="output-cell"><small>Orders</small><strong id="expOrders">3,000</strong></div><div class="output-cell"><small>Monthly revenue</small><strong id="expRevenue">₹68.1L</strong></div><div class="output-cell"><small>vs 1% baseline</small><strong id="expLift">+20%</strong></div></div><div class="interactive-note">Illustrative model for portfolio demonstration — not a forecast.</div></div></div></section>
 <section class="section" id="automation"><div class="wrap"><div class="section-head"><h2>Automation & agents</h2><p class="section-intro">Where I connect product workflows, automation and AI: remove repetitive work, route the right cases and keep humans in the loop when judgement matters.</p></div><div class="projectgrid">
-<article class="project"><div><div class="tag">n8n · Workflow automation</div><h3>Signal → enrich → decide → act</h3><p>An n8n workflow pattern for connecting triggers, APIs, enrichment, decision logic and downstream actions. The product goal is fewer manual handoffs, not automation for its own sake.</p></div><div class="stack">n8n · Webhooks · APIs · Routing · Human approval</div></article>
+
 <article class="project"><div><div class="tag">AI agent · Operations</div><h3>Support Resolution Agent</h3><p>An agent concept that reads an incoming support issue, retrieves relevant context, proposes a resolution and either executes a low-risk action or escalates to a human.</p></div><div class="stack">Agent orchestration · RAG · tools · guardrails</div></article>
 <article class="project"><div><div class="tag">AI chatbot · Product</div><h3>Product Discovery Chatbot</h3><p>A conversational product layer that helps users find the right product or next action by asking only the questions that materially change the recommendation.</p></div><div class="stack">Conversation design · intent · retrieval · analytics</div></article>
 <article class="project"><div><div class="tag">AI agent · Growth</div><h3>Experiment Analyst Agent</h3><p>Turns experiment results into a structured readout: what moved, what did not, likely explanations, segment differences and the next decision to make.</p></div><div class="stack">Analytics · agents · structured outputs · decision rules</div></article>
