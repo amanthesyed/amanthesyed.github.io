@@ -335,6 +335,15 @@ select{border-radius:0}.section{border-color:var(--line)}
 .outcomes-item small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;margin-bottom:6px}
 .outcomes-item strong{display:block;font-size:25px;letter-spacing:-.04em}
 .outcomes-item span{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+
+/* AI build launch controls */
+.ai-card{position:relative}
+.ai-actions{display:flex;gap:8px;align-items:center;margin-top:18px}
+.ai-launch{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border:1px solid var(--accent);padding:10px 13px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.ai-launch:hover{opacity:.86;transform:translateY(-1px)}
+.ai-launch.secondary{background:#fff;color:var(--accent-dark);border-color:var(--line)}
+.ai-card[open] .ai-launch{display:none}
+@media(max-width:800px){.ai-actions{display:grid;grid-template-columns:1fr}.ai-launch{width:100%}}
 </style>
 </head>
 <body>
@@ -480,6 +489,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <article class="project ai ai-card" tabindex="0" role="button" aria-expanded="false">
 <div><div class="tag">AI product prototype · Revenue</div><h3>Revenue Opportunity Copilot</h3><p>A product workflow that takes funnel and customer metrics, spots leaks, ranks opportunities and turns them into testable product hypotheses.</p></div>
 <div class="stack">Analytics · LLM workflow · structured outputs</div>
+<div class="ai-actions"><a class="ai-launch" href="#copilot" onclick="event.stopPropagation()">Launch prototype ↗</a></div>
 <div class="ai-expand"><b>Decision flow</b><div class="ai-steps"><span>01 · Read funnel</span><span>02 · Diagnose constraint</span><span>03 · Rank opportunity</span><span>04 · Propose experiment</span></div><p>The useful part is the decision structure: inputs → diagnosis → prioritised action, rather than an open-ended chatbot.</p></div>
 <div class="ai-hint">Inspect build ↗</div>
 </article>
@@ -487,6 +497,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <article class="project ai-card" tabindex="0" role="button" aria-expanded="false">
 <div><div class="tag">AI agent · Operations</div><h3>Support Triage Copilot</h3><p>Classifies incoming issues, retrieves context, identifies likely root causes and recommends the next action before a case becomes another ticket loop.</p></div>
 <div class="stack">Classification · retrieval · tools · human-in-the-loop</div>
+<div class="ai-actions"><a class="ai-launch" href="#deep-work" onclick="event.stopPropagation();jumpDeep('support')">Open decision lab ↗</a></div>
 <div class="ai-expand"><b>Decision flow</b><div class="ai-steps"><span>01 · Classify</span><span>02 · Retrieve context</span><span>03 · Assess confidence</span><span>04 · Recommend / escalate</span></div><p>Automation is constrained by confidence and risk; uncertain cases stay in the human workflow.</p></div>
 <div class="ai-hint">Inspect build ↗</div>
 </article>
@@ -494,6 +505,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <article class="project ai-card" tabindex="0" role="button" aria-expanded="false">
 <div><div class="tag">AI agent · Growth</div><h3>Experiment Copilot</h3><p>Turns a metric, segment and business goal into an experiment brief and can later evaluate results against the original decision rule.</p></div>
 <div class="stack">Experimentation · agents · analytics · prompts</div>
+<div class="ai-actions"><a class="ai-launch" href="#experiment-lab" onclick="event.stopPropagation()">Run experiment lab ↗</a></div>
 <div class="ai-expand"><b>Decision flow</b><div class="ai-steps"><span>01 · Define metric</span><span>02 · Select segment</span><span>03 · Set hypothesis</span><span>04 · Evaluate result</span></div><p>The product constraint is keeping the experiment tied to a predefined success rule instead of letting the output drift after seeing results.</p></div>
 <div class="ai-hint">Inspect build ↗</div>
 </article>
