@@ -51,6 +51,39 @@ body{background:var(--bg);color:var(--ink)}
 .widget,.copilot{background:var(--card);border-color:var(--line)}.widget-output,.node-detail,.engineering-detail{background:#EEF3F8;border-color:#D4DEE8}.node{background:#F7F9FC;border-color:#D3DDE7;color:var(--ink)}.node:hover,.node.active{border-color:var(--accent)}
 .pill{border-color:#AFC0D3;color:var(--accent-dark)}.slider-value{color:var(--accent-dark)}.run{background:var(--accent);color:#fff}.contact{background:#DCE8F5;color:var(--ink)}.contact p{color:var(--muted)}.contact a.email{border-color:#8EA5BD}.tag{color:#60758A}
 select{border-radius:0}.section{border-color:var(--line)}
+
+/* Deep interactive case studies */
+.deep-work{padding-top:72px}
+.deep-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.deep-tab{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:11px 14px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.deep-tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.deep-panel{display:none;background:var(--card);border:1px solid var(--line);padding:34px;box-shadow:0 8px 28px rgba(36,52,71,.045)}
+.deep-panel.active{display:block}
+.deep-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:38px}
+.deep-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--accent-dark);margin-bottom:10px}
+.deep-panel h3{font-size:38px;line-height:1;letter-spacing:-.055em;margin:0 0 14px}
+.deep-panel p{color:var(--muted)}
+.deep-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+.deep-fact{border-top:1px solid var(--line);padding-top:10px}
+.deep-fact small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em}
+.deep-fact strong{display:block;font-size:21px;margin-top:3px}
+.deep-control{background:#F7F9FC;border:1px solid var(--line);padding:22px}
+.deep-control h4{margin:0 0 18px;font-size:20px;letter-spacing:-.03em}
+.deep-row{display:grid;grid-template-columns:150px 1fr 70px;gap:14px;align-items:center;margin:16px 0}
+.deep-row label{font-size:12px;color:var(--muted)}
+.deep-row input{width:100%;accent-color:var(--accent)}
+.deep-val{text-align:right;font-weight:800;color:var(--accent-dark)}
+.deep-result{margin-top:20px;padding:20px;background:#EEF3F8;border:1px solid #D4DEE8}
+.deep-result strong{font-size:25px;letter-spacing:-.04em}
+.deep-result p{margin:7px 0 0;font-size:13px}
+.trace{display:grid;gap:8px;margin-top:16px}
+.trace-item{padding:11px 13px;border-left:2px solid var(--accent);background:#F7F9FC;font-size:12px;color:var(--muted)}
+.trace-item b{color:var(--ink)}
+.decision-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.decision-buttons button{border:1px solid var(--line);background:#F7F9FC;padding:12px 8px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;color:var(--ink)}
+.decision-buttons button.active{border-color:var(--accent);background:#EAF1F8}
+@media(max-width:800px){.deep-layout{grid-template-columns:1fr}.deep-panel{padding:24px}.deep-row{grid-template-columns:100px 1fr 60px}.deep-facts{grid-template-columns:1fr}.decision-buttons{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -66,7 +99,97 @@ select{border-radius:0}.section{border-color:var(--line)}
 <article class="case"><div><div class="tag">Truemeds · Commerce + Growth</div><h3>Turning healthcare traffic into repeat behaviour.</h3><p>Worked across availability, pricing, chronic-care discovery, SEO, loyalty and engagement loops for a ₹120Cr+ annual GMV healthcare commerce business.</p></div><div><span class="metric">₹30L<span style="font-size:20px">+</span></span><div><small>additional monthly revenue opportunity from Chronic FOD</small></div></div></article>
 <article class="case dark"><div><div class="tag">Experiment · Engagement</div><h3>Cashback Streak</h3><p>A behavioural loop designed to move customers from engagement to order — with conversion, AOV and revenue as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></div></article>
 <article class="case"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div></div></article>
+
 </div></div></section>
+
+<section class="section deep-work" id="deep-work">
+<div class="wrap">
+<div class="section-head">
+<h2>Deep product work</h2>
+<p class="section-intro">Instead of adding more portfolio cards, I built deeper ways to inspect four projects: assumptions, trade-offs, behaviour and decision logic.</p>
+</div>
+
+<div class="deep-tabs">
+<button class="deep-tab active" onclick="showDeep('chronic',this)">Chronic FOD</button>
+<button class="deep-tab" onclick="showDeep('streak',this)">Cashback Streak</button>
+<button class="deep-tab" onclick="showDeep('copilot',this)">Revenue Copilot</button>
+<button class="deep-tab" onclick="showDeep('support',this)">Support Agent</button>
+</div>
+
+<div class="deep-panel active" id="deep-chronic">
+<div class="deep-layout">
+<div>
+<div class="deep-kicker">Truemeds · Commerce + Growth</div>
+<h3>Where does chronic-care growth actually come from?</h3>
+<p>The opportunity was not simply “get more traffic.” Chronic customers have repeatable purchase behaviour, so the product question becomes how availability, pricing, discovery and replenishment reduce friction across the full journey.</p>
+<p>I would prioritise the opportunity by separating <strong>traffic × conversion × repeat</strong>, then testing which constraint is actually binding.</p>
+<div class="deep-facts"><div class="deep-fact"><small>Current chronic revenue</small><strong>~₹2Cr / month</strong></div><div class="deep-fact"><small>Estimated opportunity</small><strong>₹30L+ / month</strong></div></div>
+</div>
+<div class="deep-control">
+<h4>Opportunity simulator</h4>
+<div class="deep-row"><label>Traffic change</label><input id="chTraffic" type="range" min="-20" max="50" value="10" oninput="updateChronic()"><div class="deep-val" id="chTrafficVal">+10%</div></div>
+<div class="deep-row"><label>Conversion change</label><input id="chConv" type="range" min="-10" max="30" value="8" oninput="updateChronic()"><div class="deep-val" id="chConvVal">+8%</div></div>
+<div class="deep-row"><label>Repeat change</label><input id="chRepeat" type="range" min="-10" max="30" value="5" oninput="updateChronic()"><div class="deep-val" id="chRepeatVal">+5%</div></div>
+<div class="deep-result"><small>Illustrative monthly revenue</small><br><strong id="chRevenue">₹2.48Cr</strong><p id="chNarrative">The combined effect creates a meaningful expansion opportunity.</p></div>
+</div>
+</div>
+</div>
+
+<div class="deep-panel" id="deep-streak">
+<div class="deep-layout">
+<div>
+<div class="deep-kicker">Behavioural product · Experiment</div>
+<h3>Design the loop, then pressure-test the business case.</h3>
+<p>Cashback Streak was framed as a behavioural loop rather than a decorative gamification feature: give customers a reason to return, connect repeated engagement to ordering, then measure whether the loop improves commercial outcomes.</p>
+<div class="deep-facts"><div class="deep-fact"><small>Current conversion</small><strong>0.88%</strong></div><div class="deep-fact"><small>Modelled target</small><strong>1.05%</strong></div><div class="deep-fact"><small>Modelled AOV</small><strong>₹2,270 → ₹2,380</strong></div><div class="deep-fact"><small>Modelled revenue</small><strong>₹4.8Cr → ₹6.03Cr</strong></div></div>
+</div>
+<div class="deep-control">
+<h4>Change the product assumptions</h4>
+<div class="deep-row"><label>Conversion target</label><input id="streakConv" type="range" min=".88" max="1.25" step=".01" value="1.05" oninput="updateStreak()"><div class="deep-val" id="streakConvVal">1.05%</div></div>
+<div class="deep-row"><label>AOV</label><input id="streakAov" type="range" min="2000" max="2600" step="10" value="2380" oninput="updateStreak()"><div class="deep-val" id="streakAovVal">₹2,380</div></div>
+<div class="deep-row"><label>Traffic</label><input id="streakTraffic" type="range" min="200000" max="800000" step="10000" value="480000" oninput="updateStreak()"><div class="deep-val" id="streakTrafficVal">480k</div></div>
+<div class="deep-result"><small>Illustrative monthly revenue</small><br><strong id="streakRevenue">₹11.99Cr</strong><p id="streakNarrative">At these assumptions, conversion is doing most of the commercial work.</p></div>
+</div>
+</div>
+</div>
+
+<div class="deep-panel" id="deep-copilot">
+<div class="deep-layout">
+<div>
+<div class="deep-kicker">Self-initiated AI product prototype</div>
+<h3>Don't ask AI for an answer. Give it a decision.</h3>
+<p>The Revenue Opportunity Copilot is designed around a product workflow: ingest a small funnel, identify the likely constraint, rank opportunities and produce a testable next step. The prototype is browser-only and does not pretend to be a production AI system.</p>
+<div class="trace"><div class="trace-item"><b>01 · Observe</b> — read traffic, conversion, AOV and repeat behaviour.</div><div class="trace-item"><b>02 · Diagnose</b> — identify the weakest economically meaningful lever.</div><div class="trace-item"><b>03 · Recommend</b> — turn the diagnosis into a concrete product experiment.</div><div class="trace-item"><b>04 · Guardrail</b> — keep the output illustrative rather than pretending it is a forecast.</div></div>
+</div>
+<div class="deep-control">
+<h4>Run the decision engine</h4>
+<div class="deep-row"><label>Traffic</label><input id="rcTraffic" type="range" min="50000" max="500000" step="10000" value="250000" oninput="updateRevenueDeep()"><div class="deep-val" id="rcTrafficVal">250k</div></div>
+<div class="deep-row"><label>Conversion</label><input id="rcConv" type="range" min=".3" max="3" step=".05" value="1.2" oninput="updateRevenueDeep()"><div class="deep-val" id="rcConvVal">1.20%</div></div>
+<div class="deep-row"><label>Repeat rate</label><input id="rcRepeat" type="range" min="5" max="60" step="1" value="25.8" oninput="updateRevenueDeep()"><div class="deep-val" id="rcRepeatVal">25.8%</div></div>
+<div class="deep-result"><small>Engine output</small><br><strong id="rcDecision">Investigate retention</strong><p id="rcDecisionCopy">The decision changes as the funnel changes.</p></div>
+</div>
+</div>
+</div>
+
+<div class="deep-panel" id="deep-support">
+<div class="deep-layout">
+<div>
+<div class="deep-kicker">AI agent · Operations</div>
+<h3>How much should an agent actually be allowed to do?</h3>
+<p>The interesting product problem is not “can the model answer?” It is deciding which actions are safe to automate, which need evidence, and which should always stop at a human.</p>
+<div class="trace"><div class="trace-item"><b>Intent</b> — classify the incoming request.</div><div class="trace-item"><b>Context</b> — retrieve only the information required.</div><div class="trace-item"><b>Policy</b> — check whether the requested action is permitted.</div><div class="trace-item"><b>Confidence</b> — route uncertain or high-risk cases to people.</div><div class="trace-item"><b>Action</b> — execute low-risk work or escalate with context.</div></div>
+</div>
+<div class="deep-control">
+<h4>Change the request and confidence</h4>
+<div class="input"><label>Request</label><select id="deepSupportType" onchange="updateSupportDeep()" style="width:100%;border:1px solid var(--line);background:#F7F9FC;padding:13px;font:inherit;color:var(--ink)"><option value="refund">Refund request</option><option value="faq">Product question</option><option value="bug">Technical issue</option><option value="security">Account / security issue</option></select></div>
+<div class="deep-row"><label>Confidence</label><input id="deepSupportConf" type="range" min="50" max="99" value="86" oninput="updateSupportDeep()"><div class="deep-val" id="deepSupportConfVal">86%</div></div>
+<div class="decision-buttons"><button id="allowBtn" onclick="setSupportMode('allow')">Allow action</button><button id="reviewBtn" onclick="setSupportMode('review')">Human review</button><button id="denyBtn" onclick="setSupportMode('deny')">Block action</button></div>
+<div class="deep-result"><small>Agent decision</small><br><strong id="supportDecision">AUTOMATE</strong><p id="supportCopy">Low-risk, high-confidence requests can move through a constrained tool path.</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <section class="section"><div class="wrap"><div class="story"><div><div class="story-label">Case study · Cashback Streak</div></div><div class="story-copy"><h3>The interesting part wasn't “add a streak.”</h3><p>The product question was: how do you give a customer a reason to come back without making the experience feel like a gimmick?</p><p>I framed the loop around repeated engagement, then connected the product behaviour to business outcomes: engagement → order conversion, AOV and revenue. The numbers below are targets/modelled outcomes, not claims of realised uplift.</p><div class="funnel"><div class="tag">Behaviour → outcome</div><div class="funnel-row"><b>0.88%</b><div class="bar" style="width:38%">Current conversion</div></div><div class="funnel-row"><b>STREAK</b><div class="bar" style="width:62%">Product intervention</div></div><div class="funnel-row"><b>1.05%</b><div class="bar" style="width:75%">Target conversion</div></div><div class="funnel-note">Modelled alongside AOV ₹2,270 → ₹2,380 and revenue ₹4.8Cr → ₹6.03Cr.</div></div></div></div></div></section>
 
@@ -194,4 +317,57 @@ const nodeCopy=['A webhook or scheduled trigger starts the workflow. The point i
 updateExperiment();
 
 function runAgentLab(){const type=document.getElementById('agentType').value,conf=+document.getElementById('agentConfidence').value;const map={refund:['Refund','Verify order and eligibility, then route to policy-safe refund automation.','Tool action only if eligibility is confirmed; otherwise human review.'],faq:['Product question','Retrieve approved product information and answer directly.','No transactional tool needed.'],bug:['Technical issue','Collect environment, reproduce details and retrieve known-issue context.','Escalate if confidence is low or impact is high.'],highrisk:['Account / security issue','Do not autonomously change account security state. Gather context and route to a human.','Human approval required.']};const m=map[type];let action=conf>=85&&type!=='highrisk'?'AUTOMATE':'HUMAN REVIEW';document.getElementById('agentConfidenceVal').textContent=conf+'%';document.getElementById('agentOutput').innerHTML='<div class="output-cell"><small>Intent</small><strong>'+m[0]+'</strong></div><div class="output-cell"><small>Next step</small><strong>'+m[1]+'</strong></div><div class="output-cell"><small>Decision</small><strong>'+action+'</strong></div>';}runAgentLab();
+
+function showDeep(id,btn){
+ document.querySelectorAll('.deep-panel').forEach(p=>p.classList.remove('active'));
+ document.querySelectorAll('.deep-tab').forEach(b=>b.classList.remove('active'));
+ document.getElementById('deep-'+id).classList.add('active');
+ btn.classList.add('active');
+}
+function pct(v){return (v>=0?'+':'')+v+'%'}
+function updateChronic(){
+ const t=+document.getElementById('chTraffic').value,c=+document.getElementById('chConv').value,r=+document.getElementById('chRepeat').value;
+ const revenue=2*(1+t/100)*(1+c/100)*(1+r/100);
+ document.getElementById('chTrafficVal').textContent=pct(t);
+ document.getElementById('chConvVal').textContent=pct(c);
+ document.getElementById('chRepeatVal').textContent=pct(r);
+ document.getElementById('chRevenue').textContent='₹'+revenue.toFixed(2)+'Cr';
+ document.getElementById('chNarrative').textContent=revenue>2.3?'The model suggests a meaningful expansion, but the real product decision is identifying which lever is causal.':'The model does not justify a large growth bet yet; validate the weakest constraint first.';
+}
+function updateStreak(){
+ const c=+document.getElementById('streakConv').value,a=+document.getElementById('streakAov').value,t=+document.getElementById('streakTraffic').value;
+ const revenue=t*c/100*a/10000000;
+ document.getElementById('streakConvVal').textContent=c.toFixed(2)+'%';
+ document.getElementById('streakAovVal').textContent='₹'+a.toLocaleString('en-IN');
+ document.getElementById('streakTrafficVal').textContent=Math.round(t/1000)+'k';
+ document.getElementById('streakRevenue').textContent='₹'+revenue.toFixed(2)+'Cr';
+ document.getElementById('streakNarrative').textContent=c>1.05?'Conversion is now above the original modelled target; validate whether the incremental orders are profitable.':'The original modelled target remains the reference point; test incrementality before scaling incentives.';
+}
+function updateRevenueDeep(){
+ const t=+document.getElementById('rcTraffic').value,c=+document.getElementById('rcConv').value,r=+document.getElementById('rcRepeat').value;
+ let d='Investigate conversion',copy='Conversion is the first lever to inspect.';
+ if(c<1)d='Fix conversion first',copy='Traffic exists, but too little becomes an order.';
+ else if(r<25)d='Investigate retention',copy='The first purchase is happening; the repeat loop looks weaker.';
+ else d='Optimise the whole loop',copy='No single lever dominates; segment before choosing the next bet.';
+ document.getElementById('rcTrafficVal').textContent=Math.round(t/1000)+'k';
+ document.getElementById('rcConvVal').textContent=c.toFixed(2)+'%';
+ document.getElementById('rcRepeatVal').textContent=r.toFixed(1)+'%';
+ document.getElementById('rcDecision').textContent=d;
+ document.getElementById('rcDecisionCopy').textContent=copy+' Illustrative logic, not an AI prediction.';
+}
+let supportMode='auto';
+function setSupportMode(mode){supportMode=mode;updateSupportDeep()}
+function updateSupportDeep(){
+ const type=document.getElementById('deepSupportType').value,conf=+document.getElementById('deepSupportConf').value;
+ const highRisk=type==='security', lowRisk=type==='faq'||type==='refund';
+ let decision=highRisk?'HUMAN REVIEW':(supportMode==='deny'?'BLOCK ACTION':supportMode==='review'?'HUMAN REVIEW':(conf>=85&&lowRisk?'AUTOMATE':'HUMAN REVIEW'));
+ let copy=highRisk?'Security-sensitive changes should stop at a human regardless of confidence.':decision==='AUTOMATE'?'Constrained automation is reasonable: high confidence, low-risk intent, explicit tool boundaries.':decision==='BLOCK ACTION'?'The workflow refuses the action and should preserve the case for audit.':'The agent should gather context and hand the case to a human with its reasoning.';
+ document.getElementById('deepSupportConfVal').textContent=conf+'%';
+ document.getElementById('supportDecision').textContent=decision;
+ document.getElementById('supportCopy').textContent=copy;
+ document.querySelectorAll('#allowBtn,#reviewBtn,#denyBtn').forEach(b=>b.classList.remove('active'));
+ document.getElementById(decision==='AUTOMATE'?'allowBtn':decision==='BLOCK ACTION'?'denyBtn':'reviewBtn').classList.add('active');
+}
+updateChronic();updateStreak();updateRevenueDeep();updateSupportDeep();
+
 </script></body></html>
