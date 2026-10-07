@@ -263,6 +263,23 @@ select{border-radius:0}.section{border-color:var(--line)}
 .growth-hint{margin-top:15px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-dark)}
 .growth-hint span{font-size:13px;margin-left:3px}
 @media(max-width:900px){.growth-grid{grid-template-columns:1fr 1fr}}@media(max-width:800px){.growth-grid{grid-template-columns:1fr}.growth-card summary{min-height:260px}}
+
+/* Engineering cards use native details/summary for reliable interaction */
+.engineering-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.engineering-card{position:relative;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.engineering-card:hover{transform:translateY(-3px)}
+.engineering-card summary{list-style:none;cursor:pointer;min-height:390px;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.engineering-card summary::-webkit-details-marker{display:none}
+.engineering-card summary:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.engineering-card[open]{border-color:#9EB0C3;box-shadow:0 14px 34px rgba(36,52,71,.08);transform:translateY(-3px)}
+.engineering-card[open] summary{min-height:0}
+.engineering-card .engineering-detail{margin-top:22px}
+.engineering-card .eng-expand{display:block;margin:0 28px 28px;padding:16px;background:#EEF3F8;border:1px solid #D4DEE8}
+.engineering-card .eng-expand-title{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--accent-dark);margin-bottom:10px}
+.engineering-card .eng-steps{display:flex;flex-wrap:wrap;gap:6px}.engineering-card .eng-steps span{font-size:10px;padding:7px 8px;background:#fff;border:1px solid var(--line);color:var(--muted)}.engineering-card .eng-steps b{color:var(--accent-dark);margin-right:3px}
+.engineering-card .eng-expand p{font-size:12px!important;color:var(--muted);line-height:1.45;margin:12px 0 0!important}
+.engineering-card .eng-hint{margin-top:16px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-dark)}
+@media(max-width:800px){.engineering-grid{grid-template-columns:1fr}.engineering-card summary{min-height:0}}
 </style>
 </head>
 <body>
@@ -661,29 +678,29 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="section-head"><h2>Engineering projects</h2><p class="section-intro">Two deeper technical projects from my engineering work — click either one to inspect the system thinking behind it.</p></div>
 <div class="projectgrid engineering-grid">
 
-<article class="project engineering-card" tabindex="0" role="button" aria-expanded="false" data-eng="pipeline">
-<div>
+<details class="project engineering-card">
+<summary><div>
 <div class="tag">Engineering · Integrations · Data</div>
 <h3>Building an integration pipeline for 100k+ daily records</h3>
 <p>Designed and worked across REST-based data flows where reliability mattered at volume. The hard part was not simply moving records — it was making the flow observable, resilient and useful to the product sitting on top of it.</p>
 <div class="eng-stack"><span>REST APIs</span><span>ETL</span><span>Data validation</span><span>Error handling</span><span>Monitoring</span></div>
 </div>
 <div class="engineering-detail"><b>System thinking</b><span>Source → validation → transformation → API delivery → downstream workflow</span></div>
+<div class="eng-hint">Inspect project ↗</div></summary>
 <div class="eng-expand"><div class="eng-expand-title">How the system works</div><div class="eng-steps"><span><b>01</b> Source records</span><span><b>02</b> Validate schema + data</span><span><b>03</b> Transform payloads</span><span><b>04</b> Deliver through APIs</span><span><b>05</b> Monitor failures</span></div><p>The product lesson: reliability is part of the user experience. When integrations fail silently, the product fails with them.</p></div>
-<div class="eng-hint">Click to inspect ↗</div>
-</article>
+</details>
 
-<article class="project engineering-card" tabindex="0" role="button" aria-expanded="false" data-eng="automation">
-<div>
+<details class="project engineering-card">
+<summary><div>
 <div class="tag">Engineering · Automation · Reliability</div>
 <h3>Turning repetitive operational work into software</h3>
 <p>Built automation and reporting workflows to reduce manual intervention around recurring operational processes. The goal was to move teams from reactive ticket handling toward repeatable, measurable workflows.</p>
 <div class="eng-stack"><span>Python</span><span>REST APIs</span><span>CI/CD</span><span>Automation</span><span>Reporting</span></div>
 </div>
 <div class="engineering-detail"><b>Engineering principle</b><span>Automate the predictable work. Surface exceptions. Keep humans in the decisions that actually need judgement.</span></div>
+<div class="eng-hint">Inspect project ↗</div></summary>
 <div class="eng-expand"><div class="eng-expand-title">What changed</div><div class="eng-steps"><span><b>01</b> Find repeatable work</span><span><b>02</b> Encode the workflow</span><span><b>03</b> Add reporting</span><span><b>04</b> Automate delivery</span><span><b>05</b> Escalate exceptions</span></div><p>The product lesson: automation should remove repetitive effort without hiding the cases that need human judgement.</p></div>
-<div class="eng-hint">Click to inspect ↗</div>
-</article>
+</details>
 
 </div>
 </div>
