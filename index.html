@@ -14,10 +14,10 @@ nav{height:76px;display:flex;align-items:center;justify-content:space-between;bo
 .lenses{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.lens{padding:26px;background:#fff;border:1px solid var(--line)}.lens strong{display:block;font-size:20px;margin-bottom:10px}.lens p{color:var(--muted);font-size:14px}
 .lab{background:var(--accent);padding:55px}.lab h3{font-size:46px;line-height:1;letter-spacing:-.06em;margin:0 0 16px}.lab p{max-width:650px}.labgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.labitem{background:rgba(255,255,255,.55);padding:20px;border:1px solid rgba(0,0,0,.12)}.labitem b{display:block;margin-bottom:8px}
 .timeline{display:grid;grid-template-columns:140px 1fr;gap:0;border-top:1px solid var(--line)}.tl{display:contents}.tl>div{padding:22px 0;border-bottom:1px solid var(--line)}.tl .year{font-weight:800}.tl .role{font-size:18px}.tl .role span{display:block;color:var(--muted);font-size:14px;margin-top:3px}
-.skills{display:flex;flex-wrap:wrap;gap:9px}.skill{padding:9px 13px;border:1px solid var(--line);background:#fff;font-size:13px}
+.projectgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.project{background:#fff;border:1px solid var(--line);padding:28px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between}.project h3{font-size:27px;line-height:1.03;letter-spacing:-.045em;margin:18px 0 10px}.project p{color:var(--muted);font-size:14px}.project .stack{font-size:12px;color:var(--muted);margin-top:18px}.project.ai{background:#202020;color:#fff;border-color:#202020}.project.ai p,.project.ai .tag,.project.ai .stack{color:#aaa}.project.accent{background:var(--accent)}.lumen-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.lumen-card{border-top:2px solid var(--ink);padding:24px 0}.lumen-card h3{font-size:28px;letter-spacing:-.045em;margin:0 0 8px}.lumen-card p{color:var(--muted)}.rebuild{border:1px dashed #aaa;padding:28px;background:#fff}.rebuild h3{font-size:32px;letter-spacing:-.05em;margin:0 0 10px}.rebuild p{color:var(--muted)}.skills{display:flex;flex-wrap:wrap;gap:9px}.skill{padding:9px 13px;border:1px solid var(--line);background:#fff;font-size:13px}
 .contact{background:var(--dark);color:white;padding:90px 0}.contact h2{font-size:clamp(48px,7vw,86px);letter-spacing:-.07em;line-height:.9;margin:0 0 28px}.contact p{color:#aaa;max-width:550px}.contact a.email{display:inline-block;margin-top:22px;font-size:20px;border-bottom:1px solid #777;padding-bottom:4px}
 footer{padding:24px 0;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
-@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:75px 0}.hero h1{font-size:62px}.work,.story,.lenses,.labgrid{grid-template-columns:1fr}.section{padding:65px 0}.section-head{display:block}.section h2{margin-bottom:18px}.story{gap:30px}.timeline{grid-template-columns:95px 1fr}.case{min-height:330px}.lab{padding:35px 24px;margin:0 -4px}.lab h3{font-size:38px}}
+@media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:75px 0}.hero h1{font-size:62px}.work,.story,.lenses,.labgrid,.projectgrid,.lumen-grid{grid-template-columns:1fr}.section{padding:65px 0}.section-head{display:block}.section h2{margin-bottom:18px}.story{gap:30px}.timeline{grid-template-columns:95px 1fr}.case{min-height:330px}.lab{padding:35px 24px;margin:0 -4px}.lab h3{font-size:38px}}
 </style>
 </head>
 <body>
@@ -37,6 +37,47 @@ footer{padding:24px 0;display:flex;justify-content:space-between;color:var(--mut
 </div></div></section>
 
 <section class="section"><div class="wrap"><div class="story"><div><div class="story-label">Case study · Cashback Streak</div></div><div class="story-copy"><h3>The interesting part wasn't “add a streak.”</h3><p>The product question was: how do you give a customer a reason to come back without making the experience feel like a gimmick?</p><p>I framed the loop around repeated engagement, then connected the product behaviour to business outcomes: engagement → order conversion, AOV and revenue. The numbers below are targets/modelled outcomes, not claims of realised uplift.</p><div class="funnel"><div class="tag">Behaviour → outcome</div><div class="funnel-row"><b>0.88%</b><div class="bar" style="width:38%">Current conversion</div></div><div class="funnel-row"><b>STREAK</b><div class="bar" style="width:62%">Product intervention</div></div><div class="funnel-row"><b>1.05%</b><div class="bar" style="width:75%">Target conversion</div></div><div class="funnel-note">Modelled alongside AOV ₹2,270 → ₹2,380 and revenue ₹4.8Cr → ₹6.03Cr.</div></div></div></div></div></section>
+
+<section class="section" id="ai">
+<div class="wrap">
+<div class="section-head"><h2>AI builds</h2><p class="section-intro">I didn't come from an AI research background. I come from product, engineering, data and customer problems — so these are self-initiated AI product builds designed around problems I actually understand.</p></div>
+<div class="projectgrid">
+<article class="project ai"><div><div class="tag">AI product prototype · Revenue</div><h3>Revenue Opportunity Copilot</h3><p>A product workflow that takes funnel and customer metrics, spots the biggest leaks, ranks opportunities and turns them into testable product hypotheses.</p></div><div class="stack">Product thinking · analytics · LLM workflow · structured outputs</div></article>
+<article class="project"><div><div class="tag">AI product prototype · Operations</div><h3>Support Triage Copilot</h3><p>A lightweight concept for classifying incoming support issues, identifying likely root causes and routing high-impact cases before they become repeat tickets.</p></div><div class="stack">LLM classification · rules · API design · human-in-the-loop</div></article>
+<article class="project accent"><div><div class="tag">AI product prototype · Growth</div><h3>Experiment Copilot</h3><p>Turns a product metric, customer segment and business goal into an experiment brief: hypothesis, audience, primary metric, guardrails and decision rule.</p></div><div class="stack">Growth · experimentation · prompt design · analytics</div></article>
+</div>
+<p style="color:var(--muted);font-size:12px;margin-top:20px">These are portfolio builds/prototypes, not production systems or claims of commercial deployment.</p>
+</div>
+</section>
+
+<section class="section" id="lumen">
+<div class="wrap">
+<div class="section-head"><h2>Lumen projects</h2><p class="section-intro">The part of my product story that doesn't fit neatly into a “PM” title: integrations, workflows, data and shipping customer-facing features.</p></div>
+<div class="lumen-grid">
+<div class="lumen-card"><div class="tag">Integration product</div><h3>REST integrations at scale</h3><p>Worked on customer-facing integrations and data flows processing 100k+ daily records — translating technical constraints into product requirements and usable workflows.</p></div>
+<div class="lumen-card"><div class="tag">Feature delivery</div><h3>50+ production features</h3><p>Worked across requirements, delivery and release coordination for 50+ production features, with the focus on turning ambiguous requests into shippable product increments.</p></div>
+<div class="lumen-card"><div class="tag">Operational product</div><h3>Reducing the ticket loop</h3><p>Improved workflows around issue resolution and product operations, contributing to a 40% reduction in ticket resolution time.</p></div>
+<div class="lumen-card"><div class="tag">Product + engineering</div><h3>Where the two disciplines meet</h3><p>Lumen is where I became comfortable being the person who could talk to customers, analysts and engineers without translating every sentence through someone else.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="growth">
+<div class="wrap">
+<div class="section-head"><h2>Growth & revenue</h2><p class="section-intro">I like growth when it is treated as product design — not just more notifications, discounts or ads.</p></div>
+<div class="projectgrid">
+<article class="project"><div><div class="tag">College project · Reconstructed</div><h3>Spotify Artist Growth</h3><p>A student product concept for independent artists trying to increase monthly listeners. The original project is lost, so this case study is explicitly reconstructed from the problem and approach I remember.</p></div><div class="stack">Acquisition · discovery · repeat listening · artist growth</div></article>
+<article class="project"><div><div class="tag">Truemeds · Monetization</div><h3>Chronic FOD revenue</h3><p>Identified a recurring-revenue opportunity around chronic medicine customers, with an estimated additional ₹30L monthly revenue opportunity against roughly ₹2Cr monthly chronic revenue.</p></div><div class="stack">Segmentation · revenue expansion · customer behaviour</div></article>
+<article class="project"><div><div class="tag">Truemeds · Retention</div><h3>Loyalty program POC</h3><p>Worked from a target base of 1,089,765 customers and a 25.8% current retention baseline toward a modelled 33.10% Q1 retention outcome.</p></div><div class="stack">Retention · loyalty · incentives · measurement</div></article>
+</div>
+</div>
+</section>
+
+<section class="section" id="spotify">
+<div class="wrap">
+<div class="rebuild"><div class="tag">Reconstructed case study</div><h3>What I remember about the Spotify idea</h3><p>The original college files are gone, so I'm not going to manufacture screenshots or pretend I remember exact numbers. The core problem was simple: <strong>how can an artist with a small audience turn discovery into more monthly listeners?</strong></p><p>The product lens I would use today is a three-part loop: <strong>discovery → first listen → repeat listening.</strong> That creates a much better case study than a generic “marketing plan” because it connects acquisition to actual listener behaviour.</p><p style="margin-bottom:0;color:#333"><strong>We'll rebuild this properly</strong> as a portfolio case study once we decide the exact product mechanics and assumptions.</p></div>
+</div>
+</section>
 
 <section class="section" id="thinking"><div class="wrap"><div class="section-head"><h2>How I think</h2><p class="section-intro">I don't believe good product work is about having the cleverest idea. It's about choosing the right problem, making the trade-offs explicit and knowing what success should look like.</p></div>
 <div class="lenses"><div class="lens"><strong>Customer</strong><p>What is the user trying to accomplish? Where is the friction? What behaviour are we actually trying to change?</p></div><div class="lens"><strong>Business</strong><p>What's the economic engine? Revenue, retention, conversion, cost, acquisition — and which metric is genuinely causal?</p></div><div class="lens"><strong>Technology</strong><p>What can we ship reliably? Where do APIs, data, architecture or operational constraints change the product decision?</p></div></div></div></section>
