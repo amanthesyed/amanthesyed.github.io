@@ -157,6 +157,15 @@ select{border-radius:0}.section{border-color:var(--line)}
 @media(max-width:900px){.engineering-visual{min-height:330px}}
 @media(max-width:800px){.streak-visual{min-height:320px}.engineering-visual{min-height:300px}}
 
+
+/* Selected work: equal cards, no accidental nesting, tighter visual rhythm */
+.work{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.work .case{min-height:280px;padding:24px}
+.work .case h3{font-size:30px;margin:18px 0 10px}
+.work .case p{font-size:13px;line-height:1.45}
+.work .metric{font-size:34px}
+@media(max-width:900px){.work{grid-template-columns:1fr 1fr}.work .case{min-height:270px}}
+@media(max-width:800px){.work{grid-template-columns:1fr}.work .case{min-height:250px}}
 </style>
 </head>
 <body>
@@ -170,7 +179,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">The product work I want a hiring manager to understand first: onboarding, growth and technical product delivery.</p></div>
 <div class="work">
 <a class="case case-link" href="#deep-work" onclick="jumpDeep('onboarding');return false;"><div><div class="tag">Truemeds · Onboarding · 0→1</div><h3>Turning a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that let chronic-care customers identify their condition, reach a disease-specific proposition and enter the right product journey.</p></div><div><span class="metric">20%</span><div><small>persistent A/B rollout vs 80% control</small></div></div></a>
-<a class="case dark case-link" href="#deep-work" onclick="jumpDeep('streak');return false;"><div><div class="tag">Truemeds · Experiment · Engagement</div><h3>Cashback Streak: turning engagement into a reason to order.</h3><p>A behavioural loop designed to move customers from engagement to order, with conversion, AOV, revenue and incentive cost as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></a>
+<a class="case dark case-link" href="#deep-work" onclick="jumpDeep('streak');return false;"><div><div class="tag">Truemeds · Experiment · Engagement</div><h3>Cashback Streak: turning engagement into a reason to order.</h3><p>A behavioural loop designed to move customers from engagement to order, with conversion, AOV, revenue and incentive cost as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></div></a>
 <a class="case case-link" href="#engineering"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div></a>
 </div></div></section>
 
