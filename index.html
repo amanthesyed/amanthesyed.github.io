@@ -801,4 +801,23 @@ function toggleAICard(card){
  document.querySelectorAll('.ai-card').forEach(other=>{if(other!==card){other.classList.remove('open');other.setAttribute('aria-expanded','false')}});
 }
 document.querySelectorAll('.ai-card').forEach(card=>{card.addEventListener('click',()=>toggleAICard(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleAICard(card)}})});
+</script>
+<script>
+(function(){
+  function bindAIBuilds(){
+    const cards=document.querySelectorAll('.ai-card');
+    if(!cards.length)return;
+    cards.forEach(function(card){
+      card.onclick=function(){
+        const wasOpen=card.classList.contains('open');
+        cards.forEach(function(other){other.classList.remove('open');other.setAttribute('aria-expanded','false');});
+        if(!wasOpen){card.classList.add('open');card.setAttribute('aria-expanded','true');}
+      };
+      card.onkeydown=function(e){
+        if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click();}
+      };
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindAIBuilds);else bindAIBuilds();
+})();
 </script></body></html>
