@@ -944,9 +944,10 @@ document.querySelectorAll('.ai-card').forEach(card=>{card.addEventListener('clic
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindAIBuilds);else bindAIBuilds();
 })();
-</script>
+
 (function(){
  function bindGrowth(){const cards=document.querySelectorAll('.growth-card');if(!cards.length)return;cards.forEach(card=>{card.onclick=function(){const open=card.classList.contains('open');cards.forEach(o=>{o.classList.remove('open');o.setAttribute('aria-expanded','false')});if(!open){card.classList.add('open');card.setAttribute('aria-expanded','true')}};card.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click()}}})}
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindGrowth);else bindGrowth();
 })();
+</script>
 </body></html>
