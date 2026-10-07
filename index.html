@@ -103,7 +103,6 @@ select{border-radius:0}.section{border-color:var(--line)}
 .deploy-note{margin-top:18px;font-size:11px;color:var(--muted)}
 @media(max-width:800px){.deploy-grid{grid-template-columns:1fr}.deploy-card{min-height:0}.deploy-meta{align-items:flex-start;flex-direction:column}.deploy-btn{width:100%;text-align:center}}
 
-<style>
 .artifacts{background:#F7F9FC}
 .artifact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .artifact-card{background:var(--card);border:1px solid var(--line);padding:28px;min-height:300px;display:flex;flex-direction:column;box-shadow:0 8px 28px rgba(36,52,71,.045)}
@@ -120,7 +119,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 .artifact-detail b{display:block;color:var(--ink);margin-bottom:8px}
 @media(max-width:900px){.artifact-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:800px){.artifact-grid{grid-template-columns:1fr}}
-</style></style>
+</style>
 </head>
 <body>
 <nav><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center"><a class="brand" href="#">AMAN SYED</a><div class="navlinks"><a href="#work">Work</a><a href="#ai">AI</a><a href="#engineering">Engineering</a><a href="#automation">Automation</a><a href="#artifacts">Artifacts</a><a href="#experiment-lab">Labs</a><a href="#thinking">Thinking</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
@@ -468,4 +467,5 @@ function updateSupportDeep(){
 }
 updateChronic();updateStreak();updateRevenueDeep();updateSupportDeep();
 
-<script>function toggleArtifact(id){const el=document.getElementById('artifact-'+id);el.classList.toggle('open')}</script></script></body></html>
+function toggleArtifact(id){const el=document.getElementById('artifact-'+id);if(el)el.classList.toggle('open')}
+</script></body></html>
