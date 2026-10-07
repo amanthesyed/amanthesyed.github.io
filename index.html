@@ -84,6 +84,25 @@ select{border-radius:0}.section{border-color:var(--line)}
 .decision-buttons button.active{border-color:var(--accent);background:#EAF1F8}
 @media(max-width:800px){.deep-layout{grid-template-columns:1fr}.deep-panel{padding:24px}.deep-row{grid-template-columns:100px 1fr 60px}.deep-facts{grid-template-columns:1fr}.decision-buttons{grid-template-columns:1fr}}
 
+
+/* Deployable agent library */
+.deploy-section{background:#F1F5F9}
+.deploy-intro{max-width:760px}
+.deploy-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.deploy-card{background:var(--card);border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;min-height:430px;box-shadow:0 8px 28px rgba(36,52,71,.045)}
+.deploy-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.deploy-status{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--teal);background:var(--teal-soft);padding:7px 9px}
+.deploy-card h3{font-size:32px;line-height:1.02;letter-spacing:-.05em;margin:22px 0 10px}
+.deploy-card p{color:var(--muted);font-size:14px}
+.deploy-flow{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}
+.deploy-flow span{font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:7px 8px;background:#F1F5F9;border:1px solid var(--line)}
+.deploy-meta{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;align-items:end}
+.deploy-stack{font-size:11px;color:var(--muted);line-height:1.5}
+.deploy-btn{display:inline-block;white-space:nowrap;background:var(--accent);color:#fff;padding:11px 14px;font-size:12px;font-weight:800}
+.deploy-btn:hover{opacity:.84}
+.deploy-note{margin-top:18px;font-size:11px;color:var(--muted)}
+@media(max-width:800px){.deploy-grid{grid-template-columns:1fr}.deploy-card{min-height:0}.deploy-meta{align-items:flex-start;flex-direction:column}.deploy-btn{width:100%;text-align:center}}
+
 </style>
 </head>
 <body>
@@ -284,6 +303,54 @@ select{border-radius:0}.section{border-color:var(--line)}
 <article class="project"><div><div class="tag">AI chatbot · Product</div><h3>Product Discovery Chatbot</h3><p>A conversational product layer that helps users find the right product or next action by asking only the questions that materially change the recommendation.</p></div><div class="stack">Conversation design · intent · retrieval · analytics</div></article>
 <article class="project"><div><div class="tag">AI agent · Growth</div><h3>Experiment Analyst Agent</h3><p>Turns experiment results into a structured readout: what moved, what did not, likely explanations, segment differences and the next decision to make.</p></div><div class="stack">Analytics · agents · structured outputs · decision rules</div></article>
 </div></div></section>
+
+
+<section class="section deploy-section" id="deployable-agents">
+<div class="wrap">
+<div class="section-head">
+<div class="deploy-intro">
+<div class="eyebrow">Deployable AI systems</div>
+<h2>Don't just read the case study. Deploy the agent.</h2>
+</div>
+<p class="section-intro">I also map the product ideas to real n8n agent workflows people can import, connect to their own credentials and adapt. These are deployment-ready community templates — the portfolio does not claim I authored or production-tested the underlying third-party workflow.</p>
+</div>
+
+<div class="deploy-grid">
+<article class="deploy-card">
+<div class="deploy-top"><div class="tag">Customer operations · RAG</div><div class="deploy-status">Deployable</div></div>
+<h3>Autonomous Support Agent</h3>
+<p>Webhook intake → validation → rate limiting → multi-knowledge-base retrieval → agent reasoning → answer delivery → confidence-based human escalation. A serious support architecture rather than a chat demo.</p>
+<div class="deploy-flow"><span>Webhook</span><span>Supabase</span><span>RAG</span><span>Agent</span><span>Slack / Gmail</span><span>Human escalation</span></div>
+<div class="deploy-meta"><div class="deploy-stack">Best for: support teams<br>Setup: n8n + Supabase + model credentials</div><a class="deploy-btn" href="https://n8n.io/workflows/19217-autonomous-ai-customer-support-agent-with-multi-kb-rag-and-human-escalation/" target="_blank" rel="noopener">Deploy in n8n ↗</a></div>
+</article>
+
+<article class="deploy-card">
+<div class="deploy-top"><div class="tag">Product · Commerce</div><div class="deploy-status">Deployable</div></div>
+<h3>Human-Approved Product Agent</h3>
+<p>A real shopping agent that uses live product APIs, short-term memory and structured tool calls to recommend products — then requires explicit approval before an order action.</p>
+<div class="deploy-flow"><span>Chat trigger</span><span>Memory</span><span>Catalog API</span><span>Recommendation</span><span>Approval</span><span>Order API</span></div>
+<div class="deploy-meta"><div class="deploy-stack">Best for: commerce / marketplaces<br>Setup: n8n + OpenAI + product APIs + Slack</div><a class="deploy-btn" href="https://n8n.io/workflows/18185-run-a-human-approved-shopping-assistant-with-gpt-41-mini-product-apis-and-slack/" target="_blank" rel="noopener">Deploy in n8n ↗</a></div>
+</article>
+
+<article class="deploy-card">
+<div class="deploy-top"><div class="tag">Research · Multi-agent</div><div class="deploy-status">Deployable</div></div>
+<h3>Multi-Agent Research Team</h3>
+<p>One research request becomes parallel specialist work: factual research, trends and counterarguments. Agents critique each other, then a synthesis agent produces a single validated report and logs the output.</p>
+<div class="deploy-flow"><span>Webhook</span><span>Planner</span><span>3 agents</span><span>Critique</span><span>Synthesis</span><span>Google Sheets</span></div>
+<div class="deploy-meta"><div class="deploy-stack">Best for: product / strategy research<br>Setup: n8n + OpenAI + Google Sheets</div><a class="deploy-btn" href="https://n8n.io/workflows/15201-generate-multi-agent-ai-research-reports-with-openai-and-google-sheets/" target="_blank" rel="noopener">Deploy in n8n ↗</a></div>
+</article>
+
+<article class="deploy-card">
+<div class="deploy-top"><div class="tag">Deep research · Autonomous</div><div class="deploy-status">Deployable</div></div>
+<h3>Deep Research Agent</h3>
+<p>A long-running research workflow that plans the investigation, recursively searches and scrapes sources, synthesizes findings with a reasoning model and writes the finished report into Notion.</p>
+<div class="deploy-flow"><span>Form</span><span>Research plan</span><span>Search</span><span>Scrape</span><span>Reason</span><span>Notion report</span></div>
+<div class="deploy-meta"><div class="deploy-stack">Best for: market / competitor research<br>Setup: n8n + Apify + OpenAI + Notion</div><a class="deploy-btn" href="https://n8n.io/workflows/2878-host-your-own-ai-deep-research-agent-with-n8n-apify-and-openai-o3/" target="_blank" rel="noopener">Deploy in n8n ↗</a></div>
+</article>
+</div>
+<div class="deploy-note">Deployment means importing the linked workflow into your own n8n instance and supplying your own credentials, data sources and policies. No API keys are stored in this portfolio.</div>
+</div>
+</section>
 
 <section class="section" id="engineering"><div class="wrap"><div class="section-head"><h2>Engineering projects</h2><p class="section-intro">Two deeper technical projects from my engineering work — included because I still think in systems, not just screens and requirements.</p></div><div class="projectgrid engineering-grid">
 <article class="project"><div><div class="tag">Engineering · Integrations · Data</div><h3>Building an integration pipeline for 100k+ daily records</h3><p>Designed and worked across REST-based data flows where reliability mattered at volume. The hard part was not simply moving records — it was making the flow observable, resilient and useful to the product sitting on top of it.</p><div class="eng-stack"><span>REST APIs</span><span>ETL</span><span>Data validation</span><span>Error handling</span><span>Monitoring</span></div></div><div class="engineering-detail"><b>System thinking</b><span>Source → validation → transformation → API delivery → downstream workflow</span></div></article>
