@@ -176,6 +176,17 @@ select{border-radius:0}.section{border-color:var(--line)}
 .work .metric{font-size:34px}
 @media(max-width:900px){.work{grid-template-columns:1fr 1fr}.work .case{height:270px;min-height:270px}}
 @media(max-width:800px){.work{grid-template-columns:1fr}.work .case{height:auto;min-height:250px}}
+
+/* Interactive hero signal */
+.interactive-dashboard{padding:16px 16px 13px}
+.hero-controls{margin-top:13px;display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center}
+.hero-controls label{display:contents;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.hero-controls label span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.hero-controls output{font-size:10px;font-weight:800;color:var(--accent-dark);text-align:right}
+.hero-controls input{grid-column:1/-1;width:100%;height:4px;accent-color:var(--accent);cursor:pointer;margin:0 0 3px}
+.hero-signal-note{font-size:9px;color:var(--muted);margin-top:9px;border-top:1px solid #D4DEE8;padding-top:8px}
+.hero-dashboard .dash-value{transition:transform .15s ease}.hero-dashboard.pulse .dash-value{transform:scale(1.04)}
+@media(max-width:800px){.hero-controls{gap:5px 8px}}
 </style>
 </head>
 <body>
@@ -183,7 +194,20 @@ select{border-radius:0}.section{border-color:var(--line)}
 
 <header class="wrap hero">
 <div><div class="eyebrow">Product Manager · Technical Product · Growth</div><h1>I build products that change <em>behaviour.</em></h1><p>I'm Aman — a product person with an engineering background. I like messy problems, customer-facing products, measurable growth and getting from “we should” to something people can actually use.</p></div>
-<div class="hero-side"><b>Product signal</b><span>Growth, automation and customer-facing product systems.</span><div class="hero-dashboard"><div class="dash-top"><span>MONTHLY OPPORTUNITY</span><span>LIVE PROTOTYPE</span></div><div class="dash-value">₹6.03 Cr <span>modelled</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+<div class="hero-side"><b>Product signal</b><span>Growth, automation and customer-facing product systems.</span><div class="hero-dashboard interactive-dashboard">
+<div class="dash-top"><span>MONTHLY OPPORTUNITY</span><span>INTERACTIVE MODEL</span></div>
+<div class="dash-value" id="heroRevenue">₹6.03 Cr <span>modelled</span></div>
+<div class="mini-bars" id="heroBars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<div class="hero-controls">
+<label><span>Traffic</span><output id="heroTrafficVal">480k</output></label>
+<input id="heroTraffic" type="range" min="200000" max="800000" step="10000" value="480000" oninput="updateHeroSignal()">
+<label><span>Conversion</span><output id="heroConvVal">1.05%</output></label>
+<input id="heroConv" type="range" min=".5" max="1.5" step=".01" value="1.05" oninput="updateHeroSignal()">
+<label><span>AOV</span><output id="heroAovVal">₹2,380</output></label>
+<input id="heroAov" type="range" min="1800" max="2800" step="20" value="2380" oninput="updateHeroSignal()">
+</div>
+<div class="hero-signal-note">Drag the inputs to see how the opportunity changes.</div>
+</div></div>
 </header>
 
 <section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">Three examples of product, growth and technical delivery.</p></div>
@@ -690,4 +714,21 @@ updateChronic();updateStreak();updateRevenueDeep();updateSupportDeep();
 function toggleArtifact(id){const el=document.getElementById('artifact-'+id);if(el)el.classList.toggle('open')}
 
 function jumpDeep(id){const btn=[...document.querySelectorAll('.deep-tab')].find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+id+"'"));if(btn)showDeep(id,btn);document.getElementById('deep-work').scrollIntoView({behavior:'smooth',block:'start'});}
+
+function updateHeroSignal(){
+ const t=+document.getElementById('heroTraffic').value;
+ const conv=+document.getElementById('heroConv').value;
+ const aov=+document.getElementById('heroAov').value;
+ const revenue=t*conv/100*aov/10000000;
+ document.getElementById('heroTrafficVal').textContent=Math.round(t/1000)+'k';
+ document.getElementById('heroConvVal').textContent=conv.toFixed(2)+'%';
+ document.getElementById('heroAovVal').textContent='₹'+aov.toLocaleString('en-IN');
+ document.getElementById('heroRevenue').innerHTML='₹'+revenue.toFixed(2)+' Cr <span>modelled</span>';
+ const bars=[...document.querySelectorAll('#heroBars i')];
+ const level=Math.max(.25,Math.min(1,revenue/8));
+ bars.forEach((bar,i)=>bar.style.height=Math.round((28+i*10)*(.65+level*.35))+'%');
+ const dash=document.querySelector('.interactive-dashboard');
+ dash.classList.remove('pulse'); void dash.offsetWidth; dash.classList.add('pulse');
+}
+updateHeroSignal();
 </script></body></html>
