@@ -201,6 +201,24 @@ select{border-radius:0}.section{border-color:var(--line)}
 .work .case>div:last-child small{font-size:11px;line-height:1.25}
 @media(max-width:900px){.work .case{height:300px;min-height:300px}}
 @media(max-width:800px){.work .case{height:auto;min-height:250px}}
+
+/* About redesign — career story + capability groups */
+.about-section{padding-top:105px;padding-bottom:105px}
+.about-hero{display:grid;grid-template-columns:1fr .9fr;gap:80px;align-items:end;padding-bottom:68px;border-bottom:1px solid var(--line)}
+.about-hero h2{font-size:clamp(52px,6vw,78px);line-height:.94;letter-spacing:-.065em;margin:8px 0 0}
+.about-hero>p{font-size:18px;line-height:1.55;color:var(--muted);max-width:540px;margin:0}
+.career-head{display:flex;justify-content:space-between;align-items:end;padding:48px 0 18px}
+.career-head .eyebrow{margin:0}.career-head>span{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:800}
+.career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.career-card{background:var(--card);border:1px solid var(--line);padding:24px;min-height:255px;display:flex;flex-direction:column;box-shadow:0 8px 28px rgba(36,52,71,.045)}
+.career-card.current{background:#EAF1F8;border-color:#BFCFDE}
+.career-year{font-size:11px;font-weight:800;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase}
+.career-body{margin-top:auto}.career-role{font-size:22px;font-weight:800;line-height:1.05;letter-spacing:-.035em}.career-company{font-size:12px;font-weight:800;color:var(--accent-dark);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}.career-body p{font-size:13px;color:var(--muted);line-height:1.45;margin:12px 0 18px}.career-tags{display:flex;flex-wrap:wrap;gap:6px}.career-tags span{font-size:10px;padding:6px 8px;border:1px solid #C9D7E5;color:var(--muted);background:#F7F9FC}
+.capabilities-head{display:flex;justify-content:space-between;gap:40px;align-items:end;padding:72px 0 20px}.capabilities-head .eyebrow{margin:0}.capabilities-head p{max-width:500px;color:var(--muted);font-size:13px;margin:0}
+.capability-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.capability{padding:25px 22px 28px;border-right:1px solid var(--line)}.capability:last-child{border-right:0}.cap-number{font-size:10px;font-weight:800;color:var(--accent);letter-spacing:.1em}.capability h3{font-size:25px;letter-spacing:-.04em;margin:16px 0 8px}.capability p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}
+@media(max-width:900px){.about-hero{grid-template-columns:1fr;gap:25px}.career-grid{grid-template-columns:1fr}.capability-grid{grid-template-columns:1fr 1fr}.capability:nth-child(2){border-right:0}.capability:nth-child(-n+2){border-bottom:1px solid var(--line)}.capabilities-head{display:block}.capabilities-head p{margin-top:14px}}
+@media(max-width:800px){.about-section{padding-top:75px;padding-bottom:75px}.about-hero h2{font-size:54px}.career-head>span{display:none}.capability-grid{grid-template-columns:1fr}.capability{border-right:0!important;border-bottom:1px solid var(--line)!important}.capability:last-child{border-bottom:0!important}}
 </style>
 </head>
 <body>
@@ -616,9 +634,41 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="lenses"><div class="lens"><strong>Customer</strong><p>What is the user trying to accomplish? Where is the friction? What behaviour are we actually trying to change?</p></div><div class="lens"><strong>Business</strong><p>What's the economic engine? Revenue, retention, conversion, cost, acquisition — and which metric is genuinely causal?</p></div><div class="lens"><strong>Technology</strong><p>What can we ship reliably? Where do APIs, data, architecture or operational constraints change the product decision?</p></div></div></div></section>
 <section class="section"><div class="wrap"><div class="lab"><div class="eyebrow" style="color:#CFC7B9">Product Lab · 0→1 thinking</div><h3>Ideas are cheap. Product decisions are the interesting part.</h3><p>A small collection of product problems I like thinking through — without turning this portfolio into a pitch deck for things I'm building privately.</p><div class="labgrid"><div class="labitem"><b>Retention loops</b><span>What makes a customer return because the product became useful, not because we sent another notification?</span></div><div class="labitem"><b>Marketplace trust</b><span>How do you design safety, verification and incentives when strangers transact with each other?</span></div><div class="labitem"><b>AI-assisted discovery</b><span>Where can AI reduce decision friction without becoming a novelty layer on top of a broken experience?</span></div></div></div></div></section>
 
-<section class="section" id="about"><div class="wrap"><div class="section-head"><h2>About</h2><p class="section-intro">I started closer to the code and moved toward product because I liked deciding what should be built as much as building it.</p></div>
-<div class="timeline"><div class="tl"><div class="year">2025–2026</div><div class="role">Product Owner / Technical Product — TRUEMEDS<span>Healthcare commerce · growth · experimentation · technical delivery</span></div></div><div class="tl"><div class="year">2022–2025</div><div class="role">Product / Engineering — Lumen Technologies<span>B2B workflows · integrations · customer-facing delivery</span></div></div></div>
-<div style="margin-top:45px"><div class="eyebrow">Tools & strengths</div><div class="skills"><span class="skill">Product Strategy</span><span class="skill">Growth & Monetization</span><span class="skill">0→1</span><span class="skill">Experimentation</span><span class="skill">SQL</span><span class="skill">Python</span><span class="skill">REST APIs</span><span class="skill">Figma</span><span class="skill">Jira</span><span class="skill">Azure DevOps</span><span class="skill">Confluence</span><span class="skill">Mixpanel</span><span class="skill">Google Analytics</span><span class="skill">CleverTap</span><span class="skill">Tableau</span><span class="skill">Power BI</span><span class="skill">Snowflake</span><span class="skill">BigQuery</span><span class="skill">GCP</span><span class="skill">Azure</span><span class="skill">dbt</span></div></div></div></section>
+<section class="section about-section" id="about">
+<div class="wrap">
+<div class="about-hero">
+<div>
+<div class="eyebrow">A little context</div>
+<h2>Product thinking,<br>technical depth.</h2>
+</div>
+<p>I started in engineering, moved closer to product, and kept the technical side because it makes me better at deciding what to build. I work best where customer behaviour, business outcomes and systems all meet.</p>
+</div>
+
+<div class="career-head"><div class="eyebrow">Career path</div><span>Engineering → Product → Technical Product</span></div>
+<div class="career-grid">
+<article class="career-card current">
+<div class="career-year">2025 — 2026</div>
+<div class="career-body"><div class="career-role">Product Owner / Technical Product</div><div class="career-company">TRUEMEDS</div><p>Healthcare commerce · growth · experimentation · technical delivery</p><div class="career-tags"><span>Growth</span><span>0→1</span><span>Experimentation</span></div></div>
+</article>
+<article class="career-card">
+<div class="career-year">2022 — 2025</div>
+<div class="career-body"><div class="career-role">Product / Engineering</div><div class="career-company">Lumen Technologies</div><p>B2B workflows · integrations · customer-facing delivery</p><div class="career-tags"><span>APIs</span><span>Data</span><span>Product delivery</span></div></div>
+</article>
+<article class="career-card">
+<div class="career-year">2020 — 2022</div>
+<div class="career-body"><div class="career-role">Software Engineer</div><div class="career-company">TaskUs</div><p>Automation · reporting · production reliability · operational tooling</p><div class="career-tags"><span>Python</span><span>REST</span><span>CI/CD</span></div></div>
+</article>
+</div>
+
+<div class="capabilities-head"><div class="eyebrow">Capabilities</div><p>What I bring to a product team — grouped by how I actually use the skills, rather than as a wall of software logos.</p></div>
+<div class="capability-grid">
+<div class="capability"><span class="cap-number">01</span><h3>Product</h3><p>Product strategy · Growth & monetization · 0→1 · Experimentation · Roadmaps · Requirements · Product discovery</p></div>
+<div class="capability"><span class="cap-number">02</span><h3>Data</h3><p>SQL · Analytics · Funnel analysis · Metrics · A/B testing · Mixpanel · Google Analytics · CleverTap</p></div>
+<div class="capability"><span class="cap-number">03</span><h3>Technical</h3><p>REST APIs · Python · ETL · Data systems · CI/CD · dbt · Snowflake · BigQuery · GCP · Azure</p></div>
+<div class="capability"><span class="cap-number">04</span><h3>Delivery</h3><p>Figma · Jira · Azure DevOps · Confluence · Agile · Stakeholder alignment · Technical documentation</p></div>
+</div>
+</div>
+</section>
 
 <section class="contact" id="contact"><div class="wrap"><div class="eyebrow" style="color:#728398">Let's talk</div><h2>Have a product<br>problem worth solving?</h2><p>If you're working on a customer-facing product where product thinking, data and technical depth matter, I'd like to hear from you.</p><a class="email" href="mailto:AMANTHESYED@GMAIL.COM">AMANTHESYED@GMAIL.COM</a></div></section>
 <footer class="wrap"><span>© 2026 Aman Syed</span><span>Built from scratch. Hosted on GitHub Pages.</span></footer>
