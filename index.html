@@ -237,6 +237,11 @@ select{border-radius:0}.section{border-color:var(--line)}
 .eng-expand p{font-size:12px!important;color:var(--muted);line-height:1.45;margin:12px 0 0!important}
 .eng-hint{margin-top:16px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-dark)}
 @media(max-width:800px){.engineering-grid{grid-template-columns:1fr}.engineering-card{min-height:0}}
+
+/* Interactive AI builds */
+.ai-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ai-card{cursor:pointer;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}.ai-card:hover{transform:translateY(-3px)}.ai-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.ai-card.open{border-color:#9EB0C3;box-shadow:0 14px 34px rgba(36,52,71,.08)}
+.ai-expand{display:none;margin-top:16px;padding:15px;background:#EEF3F8;border:1px solid #D4DEE8}.ai-card.open .ai-expand{display:block}.ai-expand>b{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:9px}.ai-steps{display:flex;flex-wrap:wrap;gap:6px}.ai-steps span{font-size:10px;padding:6px 8px;background:#fff;border:1px solid var(--line);color:var(--muted)}.ai-expand p{font-size:12px!important;line-height:1.45;color:var(--muted);margin:11px 0 0!important}.ai-hint{margin-top:15px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-dark)}.ai-note{color:var(--muted);font-size:12px;margin-top:20px}
+@media(max-width:900px){.ai-grid{grid-template-columns:1fr 1fr}}@media(max-width:800px){.ai-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -370,14 +375,32 @@ select{border-radius:0}.section{border-color:var(--line)}
 
 <section class="section" id="ai">
 <div class="wrap">
-<div class="section-head"><h2>AI builds</h2><p class="section-intro">I didn't come from an AI research background. I come from product, engineering, data and customer problems — so these are self-initiated AI product builds designed around problems I actually understand.</p></div>
-<div class="projectgrid">
-<article class="project ai"><div><div class="tag">AI product prototype · Revenue</div><h3>Revenue Opportunity Copilot</h3><p>A product workflow that takes funnel and customer metrics, spots leaks, ranks opportunities and turns them into testable product hypotheses.</p></div><div class="stack">Analytics · LLM workflow · structured outputs</div></article>
-<article class="project"><div><div class="tag">AI agent · Operations</div><h3>Support Triage Copilot</h3><p>Classifies incoming issues, retrieves context, identifies likely root causes and recommends the next action before a case becomes another ticket loop.</p></div><div class="stack">Classification · retrieval · tools · human-in-the-loop</div></article>
+<div class="section-head"><h2>AI builds</h2><p class="section-intro">Self-initiated AI product builds designed around product, engineering, data and customer problems I understand.</p></div>
+<div class="projectgrid ai-grid">
 
-<article class="project"><div><div class="tag">AI agent · Growth</div><h3>Experiment Copilot</h3><p>Turns a metric, segment and business goal into an experiment brief and can later evaluate results against the original decision rule.</p></div><div class="stack">Experimentation · agents · analytics · prompts</div></article>
+<article class="project ai ai-card" tabindex="0" role="button" aria-expanded="false">
+<div><div class="tag">AI product prototype · Revenue</div><h3>Revenue Opportunity Copilot</h3><p>A product workflow that takes funnel and customer metrics, spots leaks, ranks opportunities and turns them into testable product hypotheses.</p></div>
+<div class="stack">Analytics · LLM workflow · structured outputs</div>
+<div class="ai-expand"><b>Decision flow</b><div class="ai-steps"><span>01 · Read funnel</span><span>02 · Diagnose constraint</span><span>03 · Rank opportunity</span><span>04 · Propose experiment</span></div><p>The useful part is the decision structure: inputs → diagnosis → prioritised action, rather than an open-ended chatbot.</p></div>
+<div class="ai-hint">Inspect build ↗</div>
+</article>
+
+<article class="project ai-card" tabindex="0" role="button" aria-expanded="false">
+<div><div class="tag">AI agent · Operations</div><h3>Support Triage Copilot</h3><p>Classifies incoming issues, retrieves context, identifies likely root causes and recommends the next action before a case becomes another ticket loop.</p></div>
+<div class="stack">Classification · retrieval · tools · human-in-the-loop</div>
+<div class="ai-expand"><b>Decision flow</b><div class="ai-steps"><span>01 · Classify</span><span>02 · Retrieve context</span><span>03 · Assess confidence</span><span>04 · Recommend / escalate</span></div><p>Automation is constrained by confidence and risk; uncertain cases stay in the human workflow.</p></div>
+<div class="ai-hint">Inspect build ↗</div>
+</article>
+
+<article class="project ai-card" tabindex="0" role="button" aria-expanded="false">
+<div><div class="tag">AI agent · Growth</div><h3>Experiment Copilot</h3><p>Turns a metric, segment and business goal into an experiment brief and can later evaluate results against the original decision rule.</p></div>
+<div class="stack">Experimentation · agents · analytics · prompts</div>
+<div class="ai-expand"><b>Decision flow</b><div class="ai-steps"><span>01 · Define metric</span><span>02 · Select segment</span><span>03 · Set hypothesis</span><span>04 · Evaluate result</span></div><p>The product constraint is keeping the experiment tied to a predefined success rule instead of letting the output drift after seeing results.</p></div>
+<div class="ai-hint">Inspect build ↗</div>
+</article>
+
 </div>
-<p style="color:var(--muted);font-size:12px;margin-top:20px">These are portfolio builds/prototypes, not production systems or claims of commercial deployment.</p>
+<p class="ai-note">These are portfolio builds/prototypes, not production systems or claims of commercial deployment.</p>
 </div>
 </section>
 
@@ -772,4 +795,10 @@ document.querySelectorAll('.engineering-card').forEach(card=>{
  card.addEventListener('click',()=>toggleEngineeringCard(card));
  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleEngineeringCard(card)}});
 });
+
+function toggleAICard(card){
+ const open=card.classList.toggle('open');card.setAttribute('aria-expanded',open?'true':'false');
+ document.querySelectorAll('.ai-card').forEach(other=>{if(other!==card){other.classList.remove('open');other.setAttribute('aria-expanded','false')}});
+}
+document.querySelectorAll('.ai-card').forEach(card=>{card.addEventListener('click',()=>toggleAICard(card));card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleAICard(card)}})});
 </script></body></html>
