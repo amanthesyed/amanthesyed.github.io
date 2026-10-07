@@ -154,7 +154,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">The product work I want a hiring manager to understand first: onboarding, growth and technical product delivery.</p></div>
 <div class="work">
 <article class="case"><div><div class="tag">Truemeds · Onboarding · 0→1</div><h3>Turning a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that let chronic-care customers identify their condition, reach a disease-specific proposition and enter the right product journey.</p></div><div><span class="metric">20%</span><div><small>persistent A/B rollout vs 80% control</small></div></div></article>
-<article class="case dark"><div><div class="tag">Truemeds · Commerce + Growth</div><h3>Turning healthcare traffic into repeat behaviour.</h3><p>Worked across availability, pricing, chronic-care discovery, SEO, loyalty and engagement loops for a ₹120Cr+ annual GMV healthcare commerce business.</p></div><div><span class="metric">₹30L<span style="font-size:20px">+</span></span><div><small>additional monthly revenue opportunity from Chronic FOD</small></div></div></article>
+<article class="case dark"><div><div class="tag">Truemeds · Experiment · Engagement</div><h3>Cashback Streak: turning engagement into a reason to order.</h3><p>A behavioural loop designed to move customers from engagement to order, with conversion, AOV, revenue and incentive cost as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></div></article>
 <article class="case"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div></div></article>
 </div></div></section>
 
@@ -166,8 +166,8 @@ select{border-radius:0}.section{border-color:var(--line)}
 </div>
 
 <div class="deep-tabs">
-<button class="deep-tab active" onclick="showDeep('chronic',this)">Chronic FOD</button>
-<button class="deep-tab" onclick="showDeep('onboarding',this)">Chronic Onboarding</button>
+<button class="deep-tab active" onclick="showDeep('onboarding',this)">Chronic Onboarding</button>
+<button class="deep-tab" onclick="showDeep('streak',this)">Cashback Streak</button>
 <button class="deep-tab" onclick="showDeep('copilot',this)">Revenue Copilot</button>
 <button class="deep-tab" onclick="showDeep('support',this)">Support Agent</button>
 </div>
@@ -215,6 +215,25 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="trace-item"><b>Measurement</b> — selection, search/A–Z interaction, CTA clicks, drop-offs and downstream conversion.</div>
 <div class="trace-item"><b>Experiment</b> — persistent 20% onboarding cohort vs 80% control, allowing the team to compare the journey against the unchanged homepage.</div>
 </div>
+</div>
+</div>
+</div>
+
+<div class="deep-panel" id="deep-streak">
+<div class="deep-layout">
+<div>
+<div class="deep-kicker">Truemeds · Behavioural product · Experiment</div>
+<h3>Design the loop, then pressure-test the business case.</h3>
+<p>Cashback Streak was framed as a behavioural loop rather than a decorative gamification feature: give customers a reason to return, connect repeated engagement to ordering, then test whether the loop creates incremental commercial value.</p>
+<div class="deep-facts"><div class="deep-fact"><small>Current conversion</small><strong>0.88%</strong></div><div class="deep-fact"><small>Modelled target</small><strong>1.05%</strong></div><div class="deep-fact"><small>Modelled AOV</small><strong>₹2,270 → ₹2,380</strong></div><div class="deep-fact"><small>Modelled revenue</small><strong>₹4.8Cr → ₹6.03Cr</strong></div></div>
+<div class="trace"><div class="trace-item"><b>Hypothesis</b> — a visible progress/reward loop increases the probability that an engaged customer places an order.</div><div class="trace-item"><b>Primary metric</b> — engagement → order conversion.</div><div class="trace-item"><b>Guardrails</b> — margin, cancellation, incentive abuse and cost per incremental order.</div></div>
+</div>
+<div class="deep-control">
+<h4>Change the product assumptions</h4>
+<div class="deep-row"><label>Conversion target</label><input id="streakConv" type="range" min=".88" max="1.25" step=".01" value="1.05" oninput="updateStreak()"><div class="deep-val" id="streakConvVal">1.05%</div></div>
+<div class="deep-row"><label>AOV</label><input id="streakAov" type="range" min="2000" max="2600" step="10" value="2380" oninput="updateStreak()"><div class="deep-val" id="streakAovVal">₹2,380</div></div>
+<div class="deep-row"><label>Traffic</label><input id="streakTraffic" type="range" min="200000" max="800000" step="10000" value="480000" oninput="updateStreak()"><div class="deep-val" id="streakTrafficVal">480k</div></div>
+<div class="deep-result"><small>Illustrative monthly revenue</small><br><strong id="streakRevenue">₹5.47Cr</strong><p id="streakNarrative">The model is only a business case; the experiment must establish incrementality.</p></div>
 </div>
 </div>
 </div>
@@ -278,7 +297,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="section-head"><h2>Growth & revenue</h2><p class="section-intro">I like growth when it is treated as product design — not just more notifications, discounts or ads.</p></div>
 <div class="projectgrid">
 <article class="project"><div><div class="tag">Reconstructed product case study</div><h3>Spotify Artist Growth</h3><p>A product concept for independent artists trying to increase monthly listeners. Reconstructed from the product problem and approach, without inventing historical results.</p></div><div class="stack">Acquisition · discovery · repeat listening · artist growth</div></article>
-<article class="project"><div><div class="tag">Truemeds · Monetization</div><h3>Chronic FOD revenue</h3><p>Identified a recurring-revenue opportunity around chronic medicine customers, with an estimated additional ₹30L monthly revenue opportunity against roughly ₹2Cr monthly chronic revenue.</p></div><div class="stack">Segmentation · revenue expansion · customer behaviour</div></article>
+<article class="project"><div><div class="tag">Truemeds · Monetization</div><h3>Chronic-care growth opportunity revenue</h3><p>Identified a recurring-revenue opportunity around chronic medicine customers, with an estimated additional ₹30L monthly revenue opportunity against roughly ₹2Cr monthly chronic revenue.</p></div><div class="stack">Segmentation · revenue expansion · customer behaviour</div></article>
 <article class="project"><div><div class="tag">Truemeds · Retention</div><h3>Loyalty program POC</h3><p>Worked from a target base of 1,089,765 customers and a 25.8% current retention baseline toward a modelled 33.10% Q1 retention outcome.</p></div><div class="stack">Retention · loyalty · incentives · measurement</div></article>
 </div>
 </div>
@@ -332,18 +351,18 @@ select{border-radius:0}.section{border-color:var(--line)}
 
 <article class="artifact-card">
 <div class="artifact-type">01 · PRD</div>
-<h3>Chronic-care growth brief</h3>
-<p class="artifact-sub">A product brief for increasing repeat behaviour in chronic-commerce.</p>
+<h3>Chronic onboarding PRD</h3>
+<p class="artifact-sub">A sanitized product brief for turning first login into a condition-led customer journey.</p>
 <div class="artifact-preview">
 <div class="artifact-preview-head"><b>PRODUCT REQUIREMENTS</b><span>v1.0</span></div>
-<div class="artifact-mini-grid"><div><small>Problem</small><b>Repeat purchase friction</b></div><div><small>Primary user</small><b>Chronic-care customer</b></div><div><small>Goal</small><b>Increase repeat orders</b></div><div><small>Metric</small><b>Repeat-order rate</b></div></div>
+<div class="artifact-mini-grid"><div><small>Problem</small><b>Generic first login</b></div><div><small>Primary user</small><b>Chronic-care customer</b></div><div><small>Goal</small><b>Condition-led journey</b></div><div><small>Experiment</small><b>20% vs 80%</b></div></div>
 </div>
 <details class="artifact-details"><summary>Inspect artifact</summary>
 <div class="artifact-sheet">
-<div class="sheet-row"><b>Problem</b><span>Customers already buying recurring medicines face friction around discovery, availability, pricing and remembering the next purchase.</span></div>
-<div class="sheet-row"><b>Hypothesis</b><span>If the product makes the recurring journey easier and more predictable, more existing customers will complete subsequent orders.</span></div>
-<div class="sheet-row"><b>Requirements</b><span>Availability + pricing context · clear reorder path · chronic-care discovery · measurable post-purchase events · failure states for unavailable products.</span></div>
-<div class="sheet-row"><b>Success</b><span>Repeat-order rate, chronic revenue, reorder conversion and customer-level retention. Guard against discount-led revenue that does not create incremental behaviour.</span></div>
+<div class="sheet-row"><b>Problem</b><span>A chronic-care customer entering the app saw the same generic homepage as everyone else, creating unnecessary navigation before the product understood their intent.</span></div>
+<div class="sheet-row"><b>Hypothesis</b><span>If we identify the customer’s condition at first login and immediately surface relevant value, the next useful action becomes clearer and downstream engagement should improve.</span></div>
+<div class="sheet-row"><b>Requirements</b><span>Top 8 + A–Z disease catalogue · search · multi-select chips · disease-specific content · backend-configured content · CTA/deep links · event tracking.</span></div>
+<div class="sheet-row"><b>Experiment</b><span>Persistent 20% onboarding experience vs 80% control. Measure selection, drop-off, CTA engagement and downstream conversion while keeping the first release intentionally narrow.</span></div>
 </div></details>
 </article>
 
