@@ -242,6 +242,10 @@ select{border-radius:0}.section{border-color:var(--line)}
 .ai-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ai-card{cursor:pointer;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}.ai-card:hover{transform:translateY(-3px)}.ai-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.ai-card.open{border-color:#9EB0C3;box-shadow:0 14px 34px rgba(36,52,71,.08)}
 .ai-expand{display:none;margin-top:16px;padding:15px;background:#EEF3F8;border:1px solid #D4DEE8}.ai-card.open .ai-expand{display:block}.ai-expand>b{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:9px}.ai-steps{display:flex;flex-wrap:wrap;gap:6px}.ai-steps span{font-size:10px;padding:6px 8px;background:#fff;border:1px solid var(--line);color:var(--muted)}.ai-expand p{font-size:12px!important;line-height:1.45;color:var(--muted);margin:11px 0 0!important}.ai-hint{margin-top:15px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-dark)}.ai-note{color:var(--muted);font-size:12px;margin-top:20px}
 @media(max-width:900px){.ai-grid{grid-template-columns:1fr 1fr}}@media(max-width:800px){.ai-grid{grid-template-columns:1fr}}
+
+/* Interactive growth & revenue cards */
+.growth-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.growth-card{cursor:pointer;position:relative;transition:transform .2s,border-color .2s,box-shadow .2s}.growth-card:hover{transform:translateY(-3px)}.growth-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.growth-card.open{border-color:#9EB0C3;box-shadow:0 14px 34px rgba(36,52,71,.08)}.growth-expand{display:none;margin-top:16px;padding:15px;background:#EEF3F8;border:1px solid #D4DEE8}.growth-card.open .growth-expand{display:block}.growth-expand>b{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-dark);margin-bottom:9px}.growth-steps{display:flex;flex-wrap:wrap;gap:6px}.growth-steps span{font-size:10px;padding:6px 8px;background:#fff;border:1px solid var(--line);color:var(--muted)}.growth-expand p{font-size:12px!important;line-height:1.45;color:var(--muted);margin:11px 0 0!important}.growth-hint{margin-top:15px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-dark)}
+@media(max-width:900px){.growth-grid{grid-template-columns:1fr 1fr}}@media(max-width:800px){.growth-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -408,11 +412,30 @@ select{border-radius:0}.section{border-color:var(--line)}
 
 <section class="section" id="growth">
 <div class="wrap">
-<div class="section-head"><h2>Growth & revenue</h2><p class="section-intro">I like growth when it is treated as product design — not just more notifications, discounts or ads.</p></div>
-<div class="projectgrid">
-<article class="project"><div><div class="tag">Reconstructed product case study</div><h3>Spotify Artist Growth</h3><p>A product concept for independent artists trying to increase monthly listeners. Reconstructed from the product problem and approach, without inventing historical results.</p></div><div class="stack">Acquisition · discovery · repeat listening · artist growth</div></article>
-<article class="project"><div><div class="tag">Truemeds · Monetization</div><h3>Chronic-care growth opportunity revenue</h3><p>Identified a recurring-revenue opportunity around chronic medicine customers, with an estimated additional ₹30L monthly revenue opportunity against roughly ₹2Cr monthly chronic revenue.</p></div><div class="stack">Segmentation · revenue expansion · customer behaviour</div></article>
-<article class="project"><div><div class="tag">Truemeds · Retention</div><h3>Loyalty program POC</h3><p>Worked from a target base of 1,089,765 customers and a 25.8% current retention baseline toward a modelled 33.10% Q1 retention outcome.</p></div><div class="stack">Retention · loyalty · incentives · measurement</div></article>
+<div class="section-head"><h2>Growth & revenue</h2><p class="section-intro">Three product problems where I used behaviour, economics and measurement to think about growth.</p></div>
+<div class="projectgrid growth-grid">
+
+<article class="project growth-card" tabindex="0" role="button" aria-expanded="false">
+<div><div class="tag">Reconstructed product case study</div><h3>Spotify Artist Growth</h3><p>A product concept for independent artists trying to increase monthly listeners. Reconstructed from the product problem and approach, without inventing historical results.</p></div>
+<div class="stack">Acquisition · discovery · repeat listening · artist growth</div>
+<div class="growth-expand"><b>Growth loop</b><div class="growth-steps"><span>Discovery</span><span>First listen</span><span>Repeat</span><span>28-day retention</span></div><p>Focus the product loop on moving a listener from discovery to repeat behaviour, then measure which sources and experiences actually contribute.</p></div>
+<div class="growth-hint">Inspect case study ↗</div>
+</article>
+
+<article class="project growth-card" tabindex="0" role="button" aria-expanded="false">
+<div><div class="tag">Truemeds · Monetization</div><h3>Chronic-care growth opportunity revenue</h3><p>Identified a recurring-revenue opportunity around chronic medicine customers, with an estimated additional ₹30L monthly revenue opportunity against roughly ₹2Cr monthly chronic revenue.</p></div>
+<div class="stack">Segmentation · revenue expansion · customer behaviour</div>
+<div class="growth-expand"><b>Opportunity logic</b><div class="growth-steps"><span>Identify chronic cohort</span><span>Improve relevance</span><span>Increase repeat</span><span>Measure revenue</span></div><p>The opportunity was to make chronic-care journeys more relevant and connect better product experiences to recurring purchase behaviour.</p></div>
+<div class="growth-hint">Inspect case study ↗</div>
+</article>
+
+<article class="project growth-card" tabindex="0" role="button" aria-expanded="false">
+<div><div class="tag">Truemeds · Retention</div><h3>Loyalty program POC</h3><p>Worked from a target base of 1,089,765 customers and a 25.8% current retention baseline toward a modelled 33.10% Q1 retention outcome.</p></div>
+<div class="stack">Retention · loyalty · incentives · measurement</div>
+<div class="growth-expand"><b>Measurement logic</b><div class="growth-steps"><span>Define cohort</span><span>Baseline retention</span><span>Design incentive</span><span>Measure Q1</span></div><p>The modelled outcome is a target, not realised performance. The important product question is whether the incentive creates incremental retained customers efficiently.</p></div>
+<div class="growth-hint">Inspect case study ↗</div>
+</article>
+
 </div>
 </div>
 </section>
@@ -820,4 +843,9 @@ document.querySelectorAll('.ai-card').forEach(card=>{card.addEventListener('clic
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindAIBuilds);else bindAIBuilds();
 })();
-</script></body></html>
+</script>
+(function(){
+ function bindGrowth(){const cards=document.querySelectorAll('.growth-card');if(!cards.length)return;cards.forEach(card=>{card.onclick=function(){const open=card.classList.contains('open');cards.forEach(o=>{o.classList.remove('open');o.setAttribute('aria-expanded','false')});if(!open){card.classList.add('open');card.setAttribute('aria-expanded','true')}};card.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.click()}}})}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bindGrowth);else bindGrowth();
+})();
+</body></html>
