@@ -166,6 +166,16 @@ select{border-radius:0}.section{border-color:var(--line)}
 .work .metric{font-size:34px}
 @media(max-width:900px){.work{grid-template-columns:1fr 1fr}.work .case{min-height:270px}}
 @media(max-width:800px){.work{grid-template-columns:1fr}.work .case{min-height:250px}}
+
+/* Selected work: keep the three examples as a clean, self-contained grid */
+.work{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.work .case{min-height:280px;height:280px;padding:24px;cursor:pointer}
+.work .case:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.work .case h3{font-size:30px;margin:18px 0 10px}
+.work .case p{font-size:13px;line-height:1.45}
+.work .metric{font-size:34px}
+@media(max-width:900px){.work{grid-template-columns:1fr 1fr}.work .case{height:270px;min-height:270px}}
+@media(max-width:800px){.work{grid-template-columns:1fr}.work .case{height:auto;min-height:250px}}
 </style>
 </head>
 <body>
@@ -176,11 +186,11 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="hero-side"><b>Product signal</b><span>Growth, automation and customer-facing product systems.</span><div class="hero-dashboard"><div class="dash-top"><span>MONTHLY OPPORTUNITY</span><span>LIVE PROTOTYPE</span></div><div class="dash-value">₹6.03 Cr <span>modelled</span></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
 </header>
 
-<section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">The product work I want a hiring manager to understand first: onboarding, growth and technical product delivery.</p></div>
+<section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">Three examples of product, growth and technical delivery.</p></div>
 <div class="work">
-<a class="case case-link" href="#deep-work" onclick="jumpDeep('onboarding');return false;"><div><div class="tag">Truemeds · Onboarding · 0→1</div><h3>Turning a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that let chronic-care customers identify their condition, reach a disease-specific proposition and enter the right product journey.</p></div><div><span class="metric">20%</span><div><small>persistent A/B rollout vs 80% control</small></div></div></a>
-<a class="case dark case-link" href="#deep-work" onclick="jumpDeep('streak');return false;"><div><div class="tag">Truemeds · Experiment · Engagement</div><h3>Cashback Streak: turning engagement into a reason to order.</h3><p>A behavioural loop designed to move customers from engagement to order, with conversion, AOV, revenue and incentive cost as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></div></a>
-<a class="case case-link" href="#engineering"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div></div></a>
+<article class="case case-link" role="link" tabindex="0" onclick="jumpDeep('onboarding')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpDeep('onboarding')}"><div><div class="tag">Truemeds · Onboarding · 0→1</div><h3>Turning a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that let chronic-care customers identify their condition, reach a disease-specific proposition and enter the right product journey.</p></div><div><span class="metric">20%</span><div><small>persistent A/B rollout vs 80% control</small></div></div></article>
+<article class="case dark case-link" role="link" tabindex="0" onclick="jumpDeep('streak')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpDeep('streak')}"><div><div class="tag">Truemeds · Experiment · Engagement</div><h3>Cashback Streak: turning engagement into a reason to order.</h3><p>A behavioural loop designed to move customers from engagement to order, with conversion, AOV, revenue and incentive cost as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div></div></article>
+<article class="case case-link" role="link" tabindex="0" onclick="document.getElementById('engineering').scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('engineering').scrollIntoView({behavior:'smooth'})}"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div></div></article>
 </div></div></section>
 
 <section class="section deep-work" id="deep-work">
@@ -605,7 +615,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 <div class="timeline"><div class="tl"><div class="year">2025–2026</div><div class="role">Product Owner / Technical Product — TRUEMEDS<span>Healthcare commerce · growth · experimentation · technical delivery</span></div></div><div class="tl"><div class="year">2022–2025</div><div class="role">Product / Engineering — Lumen Technologies<span>B2B workflows · integrations · customer-facing delivery</span></div></div></div>
 <div style="margin-top:45px"><div class="eyebrow">Tools & strengths</div><div class="skills"><span class="skill">Product Strategy</span><span class="skill">Growth & Monetization</span><span class="skill">0→1</span><span class="skill">Experimentation</span><span class="skill">SQL</span><span class="skill">Python</span><span class="skill">REST APIs</span><span class="skill">Figma</span><span class="skill">Jira</span><span class="skill">Azure DevOps</span><span class="skill">Confluence</span><span class="skill">Mixpanel</span><span class="skill">Google Analytics</span><span class="skill">CleverTap</span><span class="skill">Tableau</span><span class="skill">Power BI</span><span class="skill">Snowflake</span><span class="skill">BigQuery</span><span class="skill">GCP</span><span class="skill">Azure</span><span class="skill">dbt</span></div></div></div></section>
 
-<section class="contact" id="contact"><div class="wrap"><div class="eyebrow" style="color:#728398">Let's talk</div><h2>Have a product<br>problem worth solving?</h2><p>If you're hiring for a customer-facing product role where I can combine product thinking, data and technical depth, I'd like to hear from you.</p><a class="email" href="mailto:AMANTHESYED@GMAIL.COM">AMANTHESYED@GMAIL.COM</a></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="eyebrow" style="color:#728398">Let's talk</div><h2>Have a product<br>problem worth solving?</h2><p>If you're working on a customer-facing product where product thinking, data and technical depth matter, I'd like to hear from you.</p><a class="email" href="mailto:AMANTHESYED@GMAIL.COM">AMANTHESYED@GMAIL.COM</a></div></section>
 <footer class="wrap"><span>© 2026 Aman Syed</span><span>Built from scratch. Hosted on GitHub Pages.</span></footer>
 <script>
 function runCopilot(){
