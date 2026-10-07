@@ -143,6 +143,18 @@ select{border-radius:0}.section{border-color:var(--line)}
 .brand{display:flex;align-items:center;gap:10px}.brand-icon{width:30px;height:30px;border-radius:8px;display:block;flex:none;box-shadow:0 3px 10px rgba(36,52,71,.12)}
 
 .case-link{display:flex;text-decoration:none;color:inherit;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.case-link:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(36,52,71,.10);border-color:#9EB0C3}.case-link:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* Editorial visuals — lightweight SVG diagrams, not stock/AI imagery */
+.streak-visual{min-height:100%;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);padding:22px;position:relative;overflow:hidden}
+.streak-visual:after{content:"BEHAVIOUR LOOP";position:absolute;right:16px;top:14px;font-size:9px;letter-spacing:.12em;font-weight:800;color:#8AA0B5}
+.streak-visual svg{width:100%;max-width:390px;height:auto;display:block}
+.streak-visual .scribble{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.engineering-visual{min-height:390px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--line);padding:20px;position:relative;overflow:hidden}
+.engineering-visual:after{content:"RELIABILITY MAP";position:absolute;right:16px;top:14px;font-size:9px;letter-spacing:.12em;font-weight:800;color:#8AA0B5}
+.engineering-visual svg{width:100%;height:auto;display:block}
+@media(max-width:900px){.engineering-visual{min-height:330px}}
+@media(max-width:800px){.streak-visual{min-height:320px}.engineering-visual{min-height:300px}}
+
 </style>
 </head>
 <body>
@@ -204,6 +216,40 @@ select{border-radius:0}.section{border-color:var(--line)}
 
 <div class="deep-panel" id="deep-streak">
 <div class="deep-layout">
+<div class="streak-visual" aria-label="Cashback Streak behavioural loop diagram">
+<svg viewBox="0 0 420 420" role="img" aria-labelledby="streakTitle streakDesc">
+<title id="streakTitle">Cashback Streak behavioural loop</title>
+<desc id="streakDesc">A circular product loop connecting discovery, engagement, reward, ordering and return behaviour.</desc>
+<defs>
+<marker id="arrowStreak" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#2563EB"/></marker>
+</defs>
+<circle cx="210" cy="210" r="142" fill="#F7F9FC" stroke="#DCE3EA" stroke-width="2"/>
+<path class="scribble" d="M116 122 C157 78 229 62 285 91" stroke="#2563EB" stroke-width="5" marker-end="url(#arrowStreak)"/>
+<path class="scribble" d="M302 104 C340 138 354 190 343 232" stroke="#0F766E" stroke-width="5" marker-end="url(#arrowStreak)"/>
+<path class="scribble" d="M330 266 C303 321 247 350 190 346" stroke="#2563EB" stroke-width="5" marker-end="url(#arrowStreak)"/>
+<path class="scribble" d="M164 337 C106 317 73 269 75 214" stroke="#0F766E" stroke-width="5" marker-end="url(#arrowStreak)"/>
+<path class="scribble" d="M77 183 C80 157 92 137 110 120" stroke="#2563EB" stroke-width="5" marker-end="url(#arrowStreak)"/>
+<circle cx="210" cy="210" r="62" fill="#EAF1F8" stroke="#C7D8EA" stroke-width="2"/>
+<text x="210" y="202" text-anchor="middle" font-size="12" font-weight="800" fill="#1746A2" letter-spacing="1.5">STREAK</text>
+<text x="210" y="222" text-anchor="middle" font-size="10" fill="#617184">reward loop</text>
+<g fill="#243447" font-size="11" font-weight="700">
+<text x="210" y="47" text-anchor="middle">DISCOVER</text>
+<text x="354" y="185" text-anchor="middle">ENGAGE</text>
+<text x="307" y="350" text-anchor="middle">REWARD</text>
+<text x="108" y="349" text-anchor="middle">ORDER</text>
+<text x="64" y="185" text-anchor="middle">RETURN</text>
+</g>
+<g font-size="9" fill="#617184">
+<text x="210" y="64" text-anchor="middle">entry point</text>
+<text x="351" y="201" text-anchor="middle">build habit</text>
+<text x="307" y="366" text-anchor="middle">give a reason</text>
+<text x="108" y="365" text-anchor="middle">measure lift</text>
+<text x="64" y="201" text-anchor="middle">come back</text>
+</g>
+<circle cx="108" cy="93" r="6" fill="#F4C95D"/><circle cx="330" cy="123" r="5" fill="#F4C95D"/>
+<circle cx="325" cy="307" r="6" fill="#DDF4F0"/><circle cx="91" cy="289" r="5" fill="#DDF4F0"/>
+</svg>
+</div>
 <div>
 <div class="deep-kicker">Truemeds · Behavioural product · Experiment</div>
 <h3>Design the loop, then pressure-test the business case.</h3>
@@ -494,6 +540,51 @@ select{border-radius:0}.section{border-color:var(--line)}
 <section class="section" id="engineering"><div class="wrap"><div class="section-head"><h2>Engineering projects</h2><p class="section-intro">Two deeper technical projects from my engineering work — included because I still think in systems, not just screens and requirements.</p></div><div class="projectgrid engineering-grid">
 <article class="project"><div><div class="tag">Engineering · Integrations · Data</div><h3>Building an integration pipeline for 100k+ daily records</h3><p>Designed and worked across REST-based data flows where reliability mattered at volume. The hard part was not simply moving records — it was making the flow observable, resilient and useful to the product sitting on top of it.</p><div class="eng-stack"><span>REST APIs</span><span>ETL</span><span>Data validation</span><span>Error handling</span><span>Monitoring</span></div></div><div class="engineering-detail"><b>System thinking</b><span>Source → validation → transformation → API delivery → downstream workflow</span></div></article>
 <article class="project"><div><div class="tag">Engineering · Automation · Reliability</div><h3>Turning repetitive operational work into software</h3><p>Built automation and reporting workflows to reduce manual intervention around recurring operational processes. The goal was to move teams from reactive ticket handling toward repeatable, measurable workflows.</p><div class="eng-stack"><span>Python</span><span>REST APIs</span><span>CI/CD</span><span>Automation</span><span>Reporting</span></div></div><div class="engineering-detail"><b>Engineering principle</b><span>Automate the predictable work. Surface exceptions. Keep humans in the decisions that actually need judgement.</span></div></article>
+<div class="engineering-visual" aria-label="Engineering integration reliability diagram">
+<svg viewBox="0 0 420 390" role="img" aria-labelledby="engTitle engDesc">
+<title id="engTitle">Reliable integration pipeline</title>
+<desc id="engDesc">A simple system map showing source data moving through validation, transformation and API delivery, with monitoring and exception handling around the flow.</desc>
+<defs>
+<marker id="arrowEng" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2563EB"/></marker>
+</defs>
+<g font-family="Inter,system-ui,sans-serif">
+<text x="24" y="42" font-size="12" font-weight="800" fill="#1746A2" letter-spacing="1.4">SOURCE → SYSTEM → SIGNAL</text>
+<text x="24" y="62" font-size="10" fill="#617184">A boring pipeline is a good pipeline.</text>
+
+<g fill="#F7F9FC" stroke="#C9D7E5" stroke-width="2">
+<rect x="24" y="105" width="92" height="58" rx="8"/>
+<rect x="164" y="105" width="92" height="58" rx="8"/>
+<rect x="304" y="105" width="92" height="58" rx="8"/>
+</g>
+<g font-size="11" font-weight="800" fill="#243447" text-anchor="middle">
+<text x="70" y="130">SOURCE</text><text x="210" y="130">VALIDATE</text><text x="350" y="130">TRANSFORM</text>
+</g>
+<g font-size="9" fill="#617184" text-anchor="middle">
+<text x="70" y="148">records / events</text><text x="210" y="148">schema + rules</text><text x="350" y="148">clean payload</text>
+</g>
+<path d="M116 134 H158" stroke="#2563EB" stroke-width="3" fill="none" marker-end="url(#arrowEng)"/>
+<path d="M256 134 H298" stroke="#2563EB" stroke-width="3" fill="none" marker-end="url(#arrowEng)"/>
+
+<rect x="164" y="215" width="92" height="58" rx="8" fill="#EAF1F8" stroke="#9EB9D5" stroke-width="2"/>
+<text x="210" y="240" text-anchor="middle" font-size="11" font-weight="800" fill="#1746A2">API DELIVERY</text>
+<text x="210" y="258" text-anchor="middle" font-size="9" fill="#617184">downstream flow</text>
+<path d="M350 163 C350 190 275 195 235 210" stroke="#2563EB" stroke-width="3" fill="none" marker-end="url(#arrowEng)"/>
+
+<rect x="24" y="215" width="92" height="58" rx="8" fill="#DDF4F0" stroke="#9DD0C7" stroke-width="2"/>
+<text x="70" y="240" text-anchor="middle" font-size="11" font-weight="800" fill="#0F766E">MONITOR</text>
+<text x="70" y="258" text-anchor="middle" font-size="9" fill="#476E69">latency / volume</text>
+<path d="M164 244 H122" stroke="#0F766E" stroke-width="3" fill="none" marker-end="url(#arrowEng)"/>
+
+<rect x="304" y="215" width="92" height="58" rx="8" fill="#FFF8DF" stroke="#E8D38A" stroke-width="2"/>
+<text x="350" y="240" text-anchor="middle" font-size="11" font-weight="800" fill="#7A5D00">EXCEPTIONS</text>
+<text x="350" y="258" text-anchor="middle" font-size="9" fill="#806D35">retry / human</text>
+<path d="M256 244 H298" stroke="#0F766E" stroke-width="3" fill="none" marker-end="url(#arrowEng)"/>
+
+<path d="M350 286 C350 320 272 334 210 334 C148 334 70 320 70 286" fill="none" stroke="#DCE3EA" stroke-width="2" stroke-dasharray="5 6"/>
+<text x="210" y="365" text-anchor="middle" font-size="10" font-weight="800" fill="#617184">MAKE FAILURE VISIBLE · THEN RECOVER</text>
+</g>
+</svg>
+</div>
 </div></div></section>
 <section class="section" id="thinking"><div class="wrap"><div class="section-head"><h2>How I think</h2><p class="section-intro">I don't believe good product work is about having the cleverest idea. It's about choosing the right problem, making the trade-offs explicit and knowing what success should look like.</p></div>
 <div class="lenses"><div class="lens"><strong>Customer</strong><p>What is the user trying to accomplish? Where is the friction? What behaviour are we actually trying to change?</p></div><div class="lens"><strong>Business</strong><p>What's the economic engine? Revenue, retention, conversion, cost, acquisition — and which metric is genuinely causal?</p></div><div class="lens"><strong>Technology</strong><p>What can we ship reliably? Where do APIs, data, architecture or operational constraints change the product decision?</p></div></div></div></section>
