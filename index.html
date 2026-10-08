@@ -924,8 +924,14 @@ function updateHeroSignal(){
  document.getElementById('heroRevenue').innerHTML='₹'+revenue.toFixed(2)+' Cr <span>modelled</span>';
  const bars=[...document.querySelectorAll('#heroBars i')];
  const sensitivity=[0.90,0.95,1,1.05,1.10,1.15];
- const max=Math.max(...sensitivity);
- bars.forEach((bar,i)=>bar.style.height=Math.round(25+(sensitivity[i]/max)*65)+'%');
+ const maxTraffic=800000,maxConv=1.5,maxAov=2800;
+ const maxRevenue=maxTraffic*maxConv/100*maxAov/10000000*1.15;
+ bars.forEach((bar,i)=>{
+   const scenarioConv=conv*sensitivity[i];
+   const scenarioRevenue=t*scenarioConv/100*aov/10000000;
+   bar.style.height=Math.round(10+Math.min(1,scenarioRevenue/maxRevenue)*80)+'%';
+   bar.title=(scenarioConv).toFixed(2)+'% conversion · ₹'+scenarioRevenue.toFixed(2)+' Cr modelled';
+ });
  const dash=document.querySelector('.interactive-dashboard');
  dash.classList.remove('pulse'); void dash.offsetWidth; dash.classList.add('pulse');
 }
