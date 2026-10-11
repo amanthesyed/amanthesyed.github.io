@@ -415,6 +415,7 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
  .hero-dashboard{box-shadow:0 10px 28px rgba(25,28,37,.1)}
  .contact{padding:62px 0}
 }
+.demo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.demo-grid .project{display:flex;flex-direction:column;justify-content:space-between;gap:18px}.demo-grid .automation-action{display:inline-block;margin:8px 12px 0 0;font-size:12px;font-weight:800}.demo-grid .stack{margin-top:16px}@media(max-width:900px){.demo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.demo-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -448,7 +449,7 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
 </div></div></section>
 <section class="section" id="working-demos"><div class="wrap">
 <div class="section-head"><h2>Try the working demos</h2><p class="section-intro">Small, inspectable prototypes that make the product decision tangible. Each includes the customer/business problem, a visible architecture, and its implementation source.</p></div>
-<div class="projectgrid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+<div class="projectgrid demo-grid">
 <article class="project"><div><div class="tag">B2C · Onboarding</div><h3>Chronic-care browse journey</h3><p>Let a customer choose care areas and preview a more relevant commerce path. Tests the hypothesis that explicit intent can reduce navigation friction.</p><div class="stack">Selection · Personalisation · Next action</div></div><a class="automation-action" href="/demos/chronic-onboarding/">Try demo ↗</a><a class="automation-action" href="https://github.com/amanthesyed/amanthesyed.github.io/blob/main/demos/chronic-onboarding/index.html">Inspect source ↗</a></article>
 <article class="project"><div><div class="tag">Growth · Unit economics</div><h3>Experiment economics calculator</h3><p>Change conversion, cohort split, AOV, margin and incentive cost to see whether a modelled conversion lift still contributes economically.</p><div class="stack">Assumptions · Incrementality · Contribution</div></div><a class="automation-action" href="/demos/growth-experiment/">Try demo ↗</a><a class="automation-action" href="https://github.com/amanthesyed/amanthesyed.github.io/blob/main/demos/growth-experiment/index.html">Inspect source ↗</a></article>
 <article class="project"><div><div class="tag">AI product · Operations</div><h3>Support action router</h3><p>Adjust request type, confidence and impact to see when a support workflow can answer, needs approval, or must escalate to a person.</p><div class="stack">Policy gates · Confidence · Human review</div></div><a class="automation-action" href="/demos/support-router/">Try demo ↗</a><a class="automation-action" href="https://github.com/amanthesyed/amanthesyed.github.io/blob/main/demos/support-router/index.html">Inspect source ↗</a></article>
