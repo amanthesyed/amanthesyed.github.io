@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive prototype for a chronic-care commerce onboarding journey.">
+<title>Chronic-care onboarding demo — Aman Syed</title>
+<style>
+:root{--bg:#f7f9fc;--ink:#243447;--muted:#617184;--line:#dce3ea;--card:#fff;--accent:#2563eb;--soft:#eef3f8;--teal:#0f766e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent)}.wrap{max-width:1080px;margin:auto;padding:28px 22px 60px}.top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px}.eyebrow,.label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--teal)}h1{font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-.04em;margin:22px 0 12px;max-width:760px}h2{font-size:20px;margin:0 0 10px}p{color:var(--muted)}.intro{max-width:760px}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:28px}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;min-width:0}.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}.choice{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:#fff}.choice:has(input:checked){border-color:var(--accent);background:#eff5ff}.choice input{margin-top:5px;accent-color:var(--accent)}.choice strong{display:block;font-size:14px}.choice small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.btn{border:0;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;font:inherit;font-weight:750;cursor:pointer}.btn.secondary{background:#e8eef7;color:var(--ink)}.actions{display:flex;gap:10px;flex-wrap:wrap}.output{background:var(--soft);border:1px solid var(--line);padding:18px;border-radius:12px;margin-top:16px}.output strong{font-size:18px}.output ul{padding-left:20px;color:var(--muted)}.steps{display:grid;gap:10px;margin-top:18px}.step{padding:13px;border:1px solid var(--line);border-radius:10px;background:#fff}.step b{display:block;font-size:13px}.step span{font-size:13px;color:var(--muted)}.architecture{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0}.node{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 11px;font-size:12px;font-weight:750}.arrow{color:var(--muted)}.note{font-size:12px;border-left:3px solid var(--teal);padding-left:12px}.footer{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:13px}@media(max-width:760px){.grid{grid-template-columns:1fr}.panel{padding:18px}.chips{grid-template-columns:1fr}.wrap{padding:18px 15px 42px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><a href="../../">← Aman Syed · Product portfolio</a><span class="eyebrow">Working prototype · No backend</span></header>
+<p class="eyebrow">B2C commerce · Onboarding · Product thinking</p>
+<h1>Make the first useful action obvious.</h1>
+<p class="intro">A generic home screen makes a chronic-care customer do all the work of finding a relevant path. This prototype tests a narrower idea: let a customer choose their care areas, then make relevant commerce categories and the next action easier to find.</p>
+<div class="grid">
+<section class="panel" aria-labelledby="select-title">
+<p class="label">01 / Identify</p><h2 id="select-title">What are you shopping for?</h2>
+<p>Select one or more care areas. This is a navigation preference, not a diagnosis.</p>
+<div class="chips">
+<label class="choice"><input type="checkbox" value="Diabetes care"><span><strong>Diabetes care</strong><small>Browse related everyday-care categories</small></span></label>
+<label class="choice"><input type="checkbox" value="Heart health"><span><strong>Heart health</strong><small>Find relevant wellness and care categories</small></span></label>
+<label class="choice"><input type="checkbox" value="Thyroid care"><span><strong>Thyroid care</strong><small>Build a more relevant browse path</small></span></label>
+<label class="choice"><input type="checkbox" value="Bone and joint care"><span><strong>Bone & joint care</strong><small>Explore related care categories</small></span></label>
+<label class="choice"><input type="checkbox" value="Respiratory care"><span><strong>Respiratory care</strong><small>Browse respiratory-care categories</small></span></label>
+<label class="choice"><input type="checkbox" value="General wellness"><span><strong>General wellness</strong><small>Keep the journey broad</small></span></label>
+</div>
+<div class="actions"><button class="btn" id="continue">Build my browse path</button><button class="btn secondary" id="reset" type="button">Reset</button></div>
+<div class="output" id="result" aria-live="polite"><strong>Your next step appears here.</strong><p>Select at least one care area to preview the personalised journey.</p></div>
+</section>
+<aside class="panel"><p class="label">02 / Product decision</p><h2>Keep the journey narrow</h2>
+<div class="steps"><div class="step"><b>Identify</b><span>Ask only for information that changes the next screen.</span></div><div class="step"><b>Select</b><span>Support popular choices, browse-all and multi-select.</span></div><div class="step"><b>Personalise</b><span>Show matching categories and explain why they appear.</span></div><div class="step"><b>Act</b><span>Send the customer to a relevant existing commerce destination.</span></div></div>
+<p class="note">Problem: the default homepage treats different customer intents the same. Product hypothesis: a small amount of explicit intent can reduce navigation friction. This demo does not claim a measured conversion lift.</p>
+</aside>
+</div>
+<section class="panel" style="margin-top:18px"><p class="label">03 / Inspect the implementation</p><h2>Architecture</h2><div class="architecture"><span class="node">Customer selection</span><span class="arrow">→</span><span class="node">Client-side state</span><span class="arrow">→</span><span class="node">Category mapping</span><span class="arrow">→</span><span class="node">Next-action preview</span></div><p>No server, analytics SDK, medical inference, or customer data storage is used. The state lives in the page and disappears on refresh. In a real experiment, measure selection completion, time to first relevant category, CTA clicks, drop-off and downstream conversion against a control cohort.</p><div class="footer"><a href="https://github.com/amanthesyed/amanthesyed.github.io/blob/main/demos/chronic-onboarding/index.html">Inspect source on GitHub ↗</a><a href="../../#deep-work">Read the product case study ↗</a></div></section>
+</main>
+<script>
+const boxes=[...document.querySelectorAll('input[type="checkbox"]')],result=document.querySelector('#result');
+document.querySelector('#continue').addEventListener('click',()=>{const selected=boxes.filter(b=>b.checked).map(b=>b.value);if(!selected.length){result.innerHTML='<strong>Choose at least one care area.</strong><p>The next step depends on explicit customer intent.</p>';return;}const list=selected.map(x=>'<li>'+x+'</li>').join('');result.innerHTML='<strong>Your browse path is ready</strong><p>Based on the care areas you selected:</p><ul>'+list+'</ul><p><b>Next action:</b> open relevant care categories, review available products, or edit your selections. No diagnosis or medicine recommendation is generated.</p>';});
+document.querySelector('#reset').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);result.innerHTML='<strong>Your next step appears here.</strong><p>Select at least one care area to preview the personalised journey.</p>';});
+</script></body></html>
