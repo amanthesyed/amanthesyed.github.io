@@ -11,6 +11,7 @@ This repository is the implementation of my product portfolio. It is deliberatel
 - **AI decision labs** — support triage and agent workflows that distinguish routine, low-risk actions from cases needing human review.
 - **Automation concepts** — trigger → context → decision → routing → system-of-record patterns, including the reasons to escalate exceptions.
 - **Product artifacts** — a PRD, measurement map, decision record, integration architecture, opportunity scoring model, and agent-safety spec.
+- **Working demos** — three standalone browser apps in `demos/`: chronic-care onboarding, growth experiment economics, and support-action routing. Each has an inspectable HTML/CSS/JavaScript implementation, a visible architecture path, and an explicit problem statement.
 - **Engineering examples** — integration and operational automation work, framed around constraints, reliability, and measurable outputs.
 
 ## Implementation
@@ -26,7 +27,7 @@ There is no package install or build step. The live site is served from the repo
 
 ## Run locally
 
-Clone the repository and open `index.html` in a browser. Because this is a static site, a local server is optional; using one is useful when checking browser behaviour:
+Clone the repository and open `index.html` in a browser. Each demo is a standalone HTML page and runs without API keys, a backend, or a package install. Because this is a static site, a local server is optional; using one is useful when checking browser behaviour:
 
 ~~~bash
 git clone https://github.com/amanthesyed/amanthesyed.github.io.git
