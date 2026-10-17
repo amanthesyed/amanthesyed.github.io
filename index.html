@@ -421,6 +421,15 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
  .contact{padding:62px 0}
 }
 .demo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.demo-grid .project{display:flex;flex-direction:column;justify-content:space-between;gap:18px}.demo-grid .automation-action{display:inline-block;margin:8px 12px 0 0;font-size:12px;font-weight:800}.demo-grid .stack{margin-top:16px}@media(max-width:900px){.demo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.demo-grid{grid-template-columns:1fr}}
+/* Compact mobile nav: keep the five primary destinations reachable without a menu overlay. */
+@media(max-width:800px){
+ nav{height:64px}
+ nav .wrap{padding:0 16px}
+ .navlinks{display:flex;flex:0 0 calc(100vw - 190px);width:calc(100vw - 190px);max-width:none;gap:14px;overflow-x:auto;white-space:nowrap;font-size:12px;margin-left:10px;scrollbar-width:none}
+ .navlinks::-webkit-scrollbar{display:none}
+ .navlinks a{flex:none}
+ .hero-dashboard .bar-scale-note{color:#C2C4C7}
+}
 </style>
 </head>
 <body>
@@ -957,7 +966,7 @@ function updateChronic(){
  document.getElementById('chRevenue').textContent='₹'+revenue.toFixed(2)+'Cr';
  document.getElementById('chNarrative').textContent=revenue>2.3?'The model suggests a meaningful expansion, but the real product decision is identifying which lever is causal.':'The model does not justify a large growth bet yet; validate the weakest constraint first.';
 }
-function formatSessions(t){return t>=1000000?(t/1000000).toFixed(2).replace(/0+$/,'').replace(/[.]$/,'')+'M':Math.round(t/1000)+'k';}
+function formatSessions(t){return t>=1000000?(t/1000000).toFixed(3).replace(/0+$/,'').replace(/[.]$/,'')+'M':Math.round(t/1000)+'k';}
 function updateStreak(){
  const c=+document.getElementById('streakConv').value,a=+document.getElementById('streakAov').value,t=+document.getElementById('streakTraffic').value;
  const revenue=t*c/100*a/10000000;
