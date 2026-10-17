@@ -4,9 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#2563EB">
-<meta name="description" content="Aman Syed builds customer-facing products across B2C commerce, growth experiments, AI-assisted workflows and technical product systems. Explore product case studies, decision tools and deployable agent concepts.">
-<title>Aman Syed — Product, Growth & AI Systems</title>
+<meta name="theme-color" content="#243B53">
+<meta name="description" content="Product manager with an engineering background focused on B2C growth, customer-facing products, technical integrations and AI-assisted workflow prototypes. Explore product case studies and interactive decision tools.">
+<title>Aman Syed — Product Manager | Growth & AI Workflows</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amanthesyed.github.io/">
+<meta property="og:title" content="Aman Syed — Product Manager | Growth & AI Workflows">
+<meta property="og:description" content="Product case studies, interactive decision tools, B2C growth experiments and AI-assisted workflow prototypes.">
+<meta name="twitter:card" content="summary">
 <style>
 :root{--bg:#F7F9FC;--ink:#243447;--muted:#617184;--line:#DCE3EA;--card:#FFFFFF;--accent:#2563EB;--accent-bright:#4F83FF;--accent-dark:#1746A2;--teal:#0F766E;--teal-soft:#DDF4F0;--dark:#334E68;--soft:#EEF3F8;--max:1160px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 28px}
@@ -76,7 +81,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 .deep-row input{width:100%;accent-color:var(--accent)}
 .deep-val{text-align:right;font-weight:800;color:var(--accent-dark)}
 .deep-result{margin-top:20px;padding:20px;background:#EEF3F8;border:1px solid #D4DEE8}
-.deep-result strong{font-size:25px;letter-spacing:-.04em}
+.deep-result strong{font-size:25px;letter-spacing:-.04em}.deep-revenue-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.deep-revenue-grid>div{min-width:0}.deep-revenue-grid small{display:block;color:var(--muted);font-size:11px;line-height:1.35;margin-bottom:6px}.deep-revenue-grid strong{font-size:clamp(18px,2.4vw,25px)}
 .deep-result p{margin:7px 0 0;font-size:13px}
 .trace{display:grid;gap:8px;margin-top:16px}
 .trace-item{padding:11px 13px;border-left:2px solid var(--accent);background:#F7F9FC;font-size:12px;color:var(--muted)}
@@ -84,7 +89,7 @@ select{border-radius:0}.section{border-color:var(--line)}
 .decision-buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .decision-buttons button{border:1px solid var(--line);background:#F7F9FC;padding:12px 8px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;color:var(--ink)}
 .decision-buttons button.active{border-color:var(--accent);background:#EAF1F8}
-@media(max-width:800px){.deep-layout{grid-template-columns:1fr}.deep-panel{padding:24px}.deep-row{grid-template-columns:100px 1fr 60px}.deep-facts{grid-template-columns:1fr}.decision-buttons{grid-template-columns:1fr}}
+@media(max-width:800px){.deep-layout{grid-template-columns:1fr}.deep-panel{padding:24px}.deep-row{grid-template-columns:100px 1fr 60px}.deep-facts{grid-template-columns:1fr}.deep-revenue-grid{grid-template-columns:1fr}.decision-buttons{grid-template-columns:1fr}}
 
 
 /* Deployable agent library */
@@ -419,7 +424,7 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
-<nav><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center"><a class="brand" href="#" aria-label="Aman Syed home"><img class="brand-icon" src="/favicon.svg" alt="" width="30" height="30"><span>AMAN SYED</span></a><div class="navlinks"><a href="#work">Work</a><a href="#ai">AI</a><a href="#engineering">Engineering</a><a href="#automation" onclick="event.preventDefault();document.getElementById('automation').scrollIntoView({behavior:'smooth',block:'start'});">Automation</a><a href="#artifacts">Artifacts</a><a href="#experiment-lab">Labs</a><a href="#thinking">Thinking</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center"><a class="brand" href="#" aria-label="Aman Syed home"><img class="brand-icon" src="/favicon.svg" alt="" width="30" height="30"><span>AMAN SYED</span></a><div class="navlinks"><a href="#work">Work</a><a href="#agent-lab">Demos</a><a href="#artifacts">Artifacts</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="wrap hero">
 <div><div class="eyebrow">Product Manager · Technical Product · Growth</div><h1>I build products that change <em>behaviour.</em></h1><p>I'm Aman — a product person with an engineering background. I like messy problems, customer-facing products, measurable growth and getting from “we should” to something people can actually use.</p><div class="now-line"><b>Now:</b> building sharper B2C growth, AI-assisted product workflows and decision tools — with a bias toward things people can actually use.</div></div>
@@ -430,14 +435,14 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
 <div class="mini-bars" id="heroBars" aria-label="Conversion sensitivity"><i data-label="-10%"></i><i data-label="-5%"></i><i data-label="Base"></i><i data-label="+5%"></i><i data-label="+10%"></i><i data-label="+15%"></i></div>
 <div class="bar-labels"><span>-10%</span><span>-5%</span><span>Base</span><span>+5%</span><span>+10%</span><span>+15%</span></div>
 <div class="hero-controls">
-<label><span>Traffic</span><output id="heroTrafficVal">480k</output></label>
-<input id="heroTraffic" type="range" min="200000" max="800000" step="10000" value="480000" oninput="updateHeroSignal()">
+<label><span>Sessions / month</span><output id="heroTrafficVal">2.41M</output></label>
+<input id="heroTraffic" type="range" min="400000" max="4000000" step="1000" value="2414000" oninput="updateHeroSignal()">
 <label><span>Conversion</span><output id="heroConvVal">1.05%</output></label>
 <input id="heroConv" type="range" min=".5" max="1.5" step=".01" value="1.05" oninput="updateHeroSignal()">
 <label><span>AOV</span><output id="heroAovVal">₹2,380</output></label>
 <input id="heroAov" type="range" min="1800" max="2800" step="20" value="2380" oninput="updateHeroSignal()">
 </div>
-<div class="hero-signal-note">Drag the inputs to see how the opportunity changes.</div>
+<div class="hero-signal-note">Illustrative model. Sessions are an assumption, not reported actual traffic.</div>
 </div></div>
 </header>
 
@@ -512,15 +517,15 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
 <div class="deep-kicker">Truemeds · Behavioural product · Experiment</div>
 <h3>Design the loop, then pressure-test the business case.</h3>
 <p>Cashback Streak was framed as a behavioural loop rather than a decorative gamification feature: give customers a reason to return, connect repeated engagement to ordering, then test whether the loop creates incremental commercial value.</p>
-<div class="deep-facts"><div class="deep-fact"><small>Current conversion</small><strong>0.88%</strong></div><div class="deep-fact"><small>Modelled target</small><strong>1.05%</strong></div><div class="deep-fact"><small>Modelled AOV</small><strong>₹2,270 → ₹2,380</strong></div><div class="deep-fact"><small>Modelled revenue</small><strong>₹4.8Cr → ₹6.03Cr</strong></div></div><div class="provenance" style="margin-top:12px">Business case · modelled, not realised</div>
+<div class="deep-facts"><div class="deep-fact"><small>Current conversion</small><strong>0.88%</strong></div><div class="deep-fact"><small>Modelled target</small><strong>1.05%</strong></div><div class="deep-fact"><small>Modelled AOV</small><strong>₹2,270 → ₹2,380</strong></div><div class="deep-fact"><small>Assumed monthly sessions</small><strong>2.414M</strong></div></div><div class="provenance" style="margin-top:12px">Business case · modelled, not realised. Session volume is an assumption, not a reported traffic result.</div>
 <div class="trace"><div class="trace-item"><b>Hypothesis</b> — a visible progress/reward loop increases the probability that an engaged customer places an order.</div><div class="trace-item"><b>Primary metric</b> — engagement → order conversion.</div><div class="trace-item"><b>Guardrails</b> — margin, cancellation, incentive abuse and cost per incremental order.</div></div>
 </div>
 <div class="deep-control">
 <h4>Change the product assumptions</h4>
 <div class="deep-row"><label>Conversion target</label><input id="streakConv" type="range" min=".88" max="1.25" step=".01" value="1.05" oninput="updateStreak()"><div class="deep-val" id="streakConvVal">1.05%</div></div>
 <div class="deep-row"><label>AOV</label><input id="streakAov" type="range" min="2000" max="2600" step="10" value="2380" oninput="updateStreak()"><div class="deep-val" id="streakAovVal">₹2,380</div></div>
-<div class="deep-row"><label>Traffic</label><input id="streakTraffic" type="range" min="200000" max="800000" step="10000" value="480000" oninput="updateStreak()"><div class="deep-val" id="streakTrafficVal">480k</div></div>
-<div class="deep-result"><small>Illustrative monthly revenue</small><br><strong id="streakRevenue">₹5.47Cr</strong><p id="streakNarrative">The model is only a business case; the experiment must establish incrementality.</p></div>
+<div class="deep-row"><label>Sessions / month</label><input id="streakTraffic" type="range" min="400000" max="4000000" step="1000" value="2414000" oninput="updateStreak()"><div class="deep-val" id="streakTrafficVal">2.41M</div></div>
+<div class="deep-result"><div class="deep-revenue-grid"><div><small>Baseline · 0.88% × ₹2,270</small><strong id="streakBaselineRevenue">₹4.82 Cr</strong></div><div><small>Target · selected inputs</small><strong id="streakRevenue">₹6.03 Cr</strong></div></div><p id="streakNarrative">Illustrative revenue only. The experiment must establish incrementality.</p></div>
 </div>
 </div>
 </div>
@@ -952,14 +957,17 @@ function updateChronic(){
  document.getElementById('chRevenue').textContent='₹'+revenue.toFixed(2)+'Cr';
  document.getElementById('chNarrative').textContent=revenue>2.3?'The model suggests a meaningful expansion, but the real product decision is identifying which lever is causal.':'The model does not justify a large growth bet yet; validate the weakest constraint first.';
 }
+function formatSessions(t){return t>=1000000?(t/1000000).toFixed(2).replace(/0+$/,'').replace(/[.]$/,'')+'M':Math.round(t/1000)+'k';}
 function updateStreak(){
  const c=+document.getElementById('streakConv').value,a=+document.getElementById('streakAov').value,t=+document.getElementById('streakTraffic').value;
  const revenue=t*c/100*a/10000000;
+ const baseline=t*.88/100*2270/10000000;
  document.getElementById('streakConvVal').textContent=c.toFixed(2)+'%';
  document.getElementById('streakAovVal').textContent='₹'+a.toLocaleString('en-IN');
- document.getElementById('streakTrafficVal').textContent=Math.round(t/1000)+'k';
- document.getElementById('streakRevenue').textContent='₹'+revenue.toFixed(2)+'Cr';
- document.getElementById('streakNarrative').textContent=c>1.05?'Conversion is now above the original modelled target; validate whether the incremental orders are profitable.':'The original modelled target remains the reference point; test incrementality before scaling incentives.';
+ document.getElementById('streakTrafficVal').textContent=formatSessions(t);
+ document.getElementById('streakBaselineRevenue').textContent='₹'+baseline.toFixed(2)+' Cr';
+ document.getElementById('streakRevenue').textContent='₹'+revenue.toFixed(2)+' Cr';
+ document.getElementById('streakNarrative').textContent='Illustrative monthly revenue, not a realised result. Validate incremental orders, margin and incentive cost before scaling.';
 }
 function updateRevenueDeep(){
  const t=+document.getElementById('rcTraffic').value,c=+document.getElementById('rcConv').value,r=+document.getElementById('rcRepeat').value;
@@ -997,13 +1005,13 @@ function updateHeroSignal(){
  const conv=+document.getElementById('heroConv').value;
  const aov=+document.getElementById('heroAov').value;
  const revenue=t*conv/100*aov/10000000;
- document.getElementById('heroTrafficVal').textContent=Math.round(t/1000)+'k';
+ document.getElementById('heroTrafficVal').textContent=formatSessions(t);
  document.getElementById('heroConvVal').textContent=conv.toFixed(2)+'%';
  document.getElementById('heroAovVal').textContent='₹'+aov.toLocaleString('en-IN');
  document.getElementById('heroRevenue').innerHTML='₹'+revenue.toFixed(2)+' Cr <span>modelled</span>';
  const bars=[...document.querySelectorAll('#heroBars i')];
  const sensitivity=[0.90,0.95,1,1.05,1.10,1.15];
- const maxTraffic=800000,maxConv=1.5,maxAov=2800;
+ const maxTraffic=4000000,maxConv=1.5,maxAov=2800;
  const maxRevenue=maxTraffic*maxConv/100*maxAov/10000000*1.15;
  bars.forEach((bar,i)=>{
    const scenarioConv=conv*sensitivity[i];
