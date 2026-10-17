@@ -678,7 +678,7 @@ footer{background:var(--bg);border-top:1px solid var(--line)}
 <article class="project automation-card" tabindex="0" role="button" aria-label="Open Experiment Analyst Agent lab" onclick="openAutomation('experiment')">
 <div><div class="tag">AI agent · Growth</div><h3>Experiment Analyst Agent</h3><p>Turns experiment results into a structured readout: what moved, what did not, likely explanations, segment differences and the next decision to make.</p></div>
 <div><div class="stack">Analytics · agents · structured outputs · decision rules</div><div class="automation-action">Open experiment lab ↗</div></div></article>
-</div></div></section>
+</div><p class="ai-note" style="margin-top:18px">These are interactive portfolio concepts linked to browser decision labs, not deployed customer-facing systems.</p></div></section>
 
 
 <section class="section artifacts" id="artifacts">
@@ -1023,7 +1023,6 @@ function updateHeroSignal(){
  document.getElementById('heroRevenue').innerHTML='₹'+revenue.toFixed(2)+' Cr <span>modelled</span>';
  const bars=[...document.querySelectorAll('#heroBars i')];
  const sensitivity=[0.90,0.95,1,1.05,1.10,1.15];
- const maxTraffic=4000000,maxConv=1.5,maxAov=2800;
  const maxRevenue=100000000; /* ₹10 Cr reference scale; bar heights are capped at 100%. */
  bars.forEach((bar,i)=>{
    const scenarioConv=conv*sensitivity[i];
