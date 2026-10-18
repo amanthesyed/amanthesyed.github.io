@@ -575,7 +575,20 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
-</style>
+
+/* Flagship case-study hierarchy and evidence treatment */
+.case-evidence{display:grid;gap:5px;padding:14px 15px;margin-top:16px;border:1px solid #D8CBB8;border-left:3px solid #B58C53;border-radius:8px;background:#F7F2E9}
+.case-evidence b{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#79603B}
+.case-evidence strong{font-size:20px;letter-spacing:-.04em;color:#243B53}
+.case-evidence span{font-size:11px;line-height:1.5;color:#626B76}
+#lumen-integration,#taskus-automation{scroll-margin-top:92px}
+#taskus-automation .engineering-detail{background:#E5EEE8;border-color:#C9DAD1}
+#taskus-automation .engineering-detail b{color:#37594F}
+@media(max-width:800px){
+ #lumen-integration,#taskus-automation{scroll-margin-top:72px}
+ .case-evidence{padding:12px}
+ .case-evidence strong{font-size:18px}
+}</style>
 </head>
 <body>
 <nav><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center"><a class="brand" href="#" aria-label="Aman Syed home"><img class="brand-icon" src="/favicon.svg" alt="" width="30" height="30"><span>AMAN SYED</span></a><div class="navlinks"><a href="#work">Work</a><a href="#agent-lab">Demos</a><a href="#artifacts">Artifacts</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
@@ -601,11 +614,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 </div></div>
 </header>
 
-<section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">Three examples of product, growth and technical delivery.</p></div>
+<section class="section" id="work"><div class="wrap"><div class="section-head"><h2>Selected work</h2><p class="section-intro">Three flagship stories: B2C product discovery, high-volume B2B integrations and operational automation. Each card opens the deeper work.</p></div>
 <div class="work">
-<article class="case case-link" role="link" tabindex="0" onclick="jumpDeep('onboarding')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpDeep('onboarding')}"><div><div class="tag">Truemeds · Onboarding · 0→1</div><h3>Turning a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that let chronic-care customers identify their condition, reach a disease-specific proposition and enter the right product journey.</p></div><div><span class="metric">20%</span><div><small>persistent A/B rollout vs 80% control</small></div><div class="provenance">Experiment design · observed rollout split</div></div></article>
-<article class="case dark case-link" role="link" tabindex="0" onclick="jumpDeep('streak')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpDeep('streak')}"><div><div class="tag">Truemeds · Experiment · Engagement</div><h3>Cashback Streak: turning engagement into a reason to order.</h3><p>A behavioural loop designed to move customers from engagement to order, with conversion, AOV, revenue and incentive cost as the business lens.</p></div><div><span class="metric">0.88% → 1.05%</span><div><small>modelled engagement-to-order conversion target</small></div><div class="provenance">Modelled target · not realised</div></div></article>
-<article class="case case-link" role="link" tabindex="0" onclick="document.getElementById('engineering').scrollIntoView({behavior:'smooth'})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('engineering').scrollIntoView({behavior:'smooth'})}"><div><div class="tag">Lumen Technologies · B2B</div><h3>Making enterprise workflows less painful.</h3><p>Owned customer-facing product delivery across requirements, integrations and operational workflows, translating technical complexity into usable product outcomes.</p></div><div><span class="metric">100k+</span><div><small>daily records processed through REST integrations</small></div><div class="provenance">Production context · Lumen</div></div></article>
+<article class="case case-link" role="link" tabindex="0" aria-label="Open chronic-care onboarding case study" onclick="jumpDeep('onboarding')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();jumpDeep('onboarding')}"><div><div class="tag">TRUEMEDS · B2C PRODUCT · 0→1</div><h3>Turn a generic first login into a chronic-care journey.</h3><p>Designed an Android first-login experience that helped chronic-care customers identify their condition, see a relevant proposition and enter the appropriate commerce journey.</p></div><div><span class="metric">20 / 80</span><div><small>persistent treatment cohort / control allocation</small></div><div class="provenance">Experiment design · allocation, not lift</div></div></article>
+<article class="case dark case-link" role="link" tabindex="0" aria-label="Open Lumen integration case study" onclick="openEngineering('lumen-integration')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEngineering('lumen-integration')}"><div><div class="tag">LUMEN TECHNOLOGIES · B2B · INTEGRATIONS</div><h3>Make high-volume integrations dependable.</h3><p>Worked across customer-facing workflows and REST data flows where validation, transformation, error handling and downstream reliability mattered.</p></div><div><span class="metric">100k+</span><div><small>records processed daily through REST integrations</small></div><div class="provenance">Production scale context · Lumen</div></div></article>
+<article class="case case-link" role="link" tabindex="0" aria-label="Open TaskUs automation case study" onclick="openEngineering('taskus-automation')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openEngineering('taskus-automation')}"><div><div class="tag">TASKUS · AUTOMATION · RELIABILITY</div><h3>Reduce operational friction and improve reliability.</h3><p>Built automation and reporting workflows around recurring operational work, with an emphasis on repeatability, visibility and handling exceptions.</p></div><div><span class="metric">32%</span><div><small>reported production bug reduction at TaskUs</small></div><div class="provenance">Reported role metric · TaskUs</div></div></article>
 </div></div></section>
 <section class="section" id="working-demos"><div class="wrap">
 <div class="section-head"><h2>Try the working demos</h2><p class="section-intro">Small, inspectable prototypes that make the product decision tangible. Each includes the customer/business problem, a visible architecture, and its implementation source.</p></div>
@@ -762,7 +775,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 
 <section class="section" id="growth">
 <div class="wrap">
-<div class="section-head"><h2>Growth & revenue</h2><p class="section-intro">Three product problems where I used behaviour, economics and measurement to think about growth.</p></div>
+<div class="section-head"><h2>Supporting growth cases</h2><p class="section-intro">Additional growth work and a reconstructed concept. These complement the flagship case studies rather than repeat them.</p></div>
 <div class="projectgrid growth-grid">
 
 <details class="project growth-card">
@@ -1000,28 +1013,29 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 <div class="section-head"><h2>Engineering projects</h2><p class="section-intro">Two deeper technical projects from my engineering work — click either one to inspect the system thinking behind it.</p></div>
 <div class="projectgrid engineering-grid">
 
-<details class="project engineering-card">
+<details class="project engineering-card" id="lumen-integration">
 <summary><div>
-<div class="tag">Engineering · Integrations · Data</div>
-<h3>Building an integration pipeline for 100k+ daily records</h3>
-<p>Designed and worked across REST-based data flows where reliability mattered at volume. The hard part was not simply moving records — it was making the flow observable, resilient and useful to the product sitting on top of it.</p>
+<div class="tag">Lumen Technologies · B2B · Integrations · Data</div>
+<h3>Building dependable integrations at 100k+ records per day</h3>
+<p><strong>Problem.</strong> Customer-facing workflows depended on REST data flows processing high daily volumes; a silent data or delivery failure could break the product experience downstream.</p>
+<p><strong>Approach.</strong> The system view covered validation, transformation, API delivery, error handling and monitoring rather than treating an API call as the whole solution.</p>
 <div class="eng-stack"><span>REST APIs</span><span>ETL</span><span>Data validation</span><span>Error handling</span><span>Monitoring</span></div>
 </div>
 <div class="engineering-detail"><b>System thinking</b><span>Source → validation → transformation → API delivery → downstream workflow</span></div>
 <div class="eng-hint">Inspect project ↗</div></summary>
-<div class="eng-expand"><div class="eng-expand-title">How the system works</div><div class="eng-steps"><span><b>01</b> Source records</span><span><b>02</b> Validate schema + data</span><span><b>03</b> Transform payloads</span><span><b>04</b> Deliver through APIs</span><span><b>05</b> Monitor failures</span></div><p>The product lesson: reliability is part of the user experience. When integrations fail silently, the product fails with them.</p></div>
+<div class="eng-expand"><div class="eng-expand-title">Problem → approach → evidence</div><div class="eng-steps"><span><b>01</b> Source records</span><span><b>02</b> Validate schema + data</span><span><b>03</b> Transform payloads</span><span><b>04</b> Deliver through APIs</span><span><b>05</b> Monitor failures</span></div><div class="case-evidence"><b>Confirmed scale</b><strong>100k+ records per day</strong><span>The portfolio documents processing scale, not a quantified downstream customer or cost outcome.</span></div><p>The product lesson: reliability is part of the user experience. When integrations fail silently, the product fails with them.</p></div>
 </details>
 
-<details class="project engineering-card">
+<details class="project engineering-card" id="taskus-automation">
 <summary><div>
-<div class="tag">Engineering · Automation · Reliability</div>
+<div class="tag">TaskUs · Automation · Reporting · Reliability</div>
 <h3>Turning repetitive operational work into software</h3>
-<p>Built automation and reporting workflows to reduce manual intervention around recurring operational processes. The goal was to move teams from reactive ticket handling toward repeatable, measurable workflows.</p>
+<p><strong>Problem.</strong> Recurring operational processes created manual work and reactive handling. Built automation and reporting workflows to make repeatable work more consistent and exceptions more visible.</p>
 <div class="eng-stack"><span>Python</span><span>REST APIs</span><span>CI/CD</span><span>Automation</span><span>Reporting</span></div>
 </div>
-<div class="engineering-detail"><b>Engineering principle</b><span>Automate the predictable work. Surface exceptions. Keep humans in the decisions that actually need judgement.</span></div>
-<div class="eng-hint">Inspect project ↗</div></summary>
-<div class="eng-expand"><div class="eng-expand-title">What changed</div><div class="eng-steps"><span><b>01</b> Find repeatable work</span><span><b>02</b> Encode the workflow</span><span><b>03</b> Add reporting</span><span><b>04</b> Automate delivery</span><span><b>05</b> Escalate exceptions</span></div><p>The product lesson: automation should remove repetitive effort without hiding the cases that need human judgement.</p></div>
+<div class="engineering-detail"><b>Approach</b><span>Python · REST APIs · CI/CD · reporting · exception handling</span></div>
+<div class="eng-hint">Inspect case study ↗</div></summary>
+<div class="eng-expand"><div class="eng-expand-title">Problem → approach → evidence</div><div class="eng-steps"><span><b>01</b> Identify repeatable work</span><span><b>02</b> Encode workflow rules</span><span><b>03</b> Add reporting</span><span><b>04</b> Automate routine steps</span><span><b>05</b> Surface exceptions</span></div><div class="case-evidence"><b>Reported TaskUs metric</b><strong>32% fewer production bugs</strong><span>The current portfolio summary does not specify the measurement window or baseline, so this is reported as role context rather than attributed to one automation change.</span></div><p>The product lesson: automation should remove repetitive effort without hiding the cases that need human judgement.</p></div>
 </details>
 
 </div>
@@ -1157,6 +1171,12 @@ updateChronic();updateStreak();updateRevenueDeep();updateSupportDeep();
 function toggleArtifact(id){const el=document.getElementById('artifact-'+id);if(el)el.classList.toggle('open')}
 
 function jumpDeep(id){const btn=[...document.querySelectorAll('.deep-tab')].find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+id+"'"));if(btn)showDeep(id,btn);document.getElementById('deep-work').scrollIntoView({behavior:'smooth',block:'start'});}
+function openEngineering(id){
+ const card=document.getElementById(id);
+ if(!card)return;
+ card.open=true;
+ card.scrollIntoView({behavior:'smooth',block:'start'});
+}
 
 function updateHeroSignal(){
  const t=+document.getElementById('heroTraffic').value;
