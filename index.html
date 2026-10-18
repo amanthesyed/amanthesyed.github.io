@@ -576,6 +576,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 
+/* Let flagship cards size to their content so labels and evidence never clip. */
+.work .case{height:auto;min-height:310px;overflow:visible;justify-content:space-between}
+.work .case:focus-visible{outline:3px solid #C49A5B;outline-offset:3px}
+@media(max-width:900px){.work .case{height:auto;min-height:290px}}
+@media(max-width:800px){.work .case{height:auto;min-height:250px}}
 /* Flagship case-study hierarchy and evidence treatment */
 .case-evidence{display:grid;gap:5px;padding:14px 15px;margin-top:16px;border:1px solid #D8CBB8;border-left:3px solid #B58C53;border-radius:8px;background:#F7F2E9}
 .case-evidence b{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#79603B}
